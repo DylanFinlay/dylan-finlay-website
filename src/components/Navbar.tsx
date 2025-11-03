@@ -22,22 +22,22 @@ export default function Navbar() {
               Portfolio
             </Link>
             <Link
-              href="/gallery"
+              href="/projects"
               className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
             >
-              Gallery
-            </Link>
-            <Link
-              href="/gear"
-              className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
-            >
-              Gear
+              Projects
             </Link>
             <Link
               href="/blog"
               className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
             >
               Blog
+            </Link>
+            <Link
+              href="/gear"
+              className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
+            >
+              Gear
             </Link>
           </div>
         </div>
