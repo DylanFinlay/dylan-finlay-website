@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Basic content typography for MDX */
+.prose {
+  max-width: 75ch;
+  margin: 0 auto;
+  padding: 1rem;
+}
