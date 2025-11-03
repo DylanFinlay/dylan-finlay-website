@@ -1,47 +1,48 @@
 {
-  // Editor formatting
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "explicit"
-  },
-  
-  // File associations for MDX
-  "files.associations": {
-    "*.mdx": "mdx"
-  },
-  
-  // Tailwind CSS IntelliSense
-  "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ],
-  "tailwindCSS.includeLanguages": {
-    "typescript": "javascript",
-    "typescriptreact": "javascript",
-    "mdx": "html"
-  },
-  
-  // TypeScript
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  
-  // Search exclusions (performance)
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/.next": true,
-    "**/out": true,
-    "**/.vercel": true
-  },
-  
-  // File nesting for cleaner explorer
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.patterns": {
-    "*.ts": "${capture}.test.ts, ${capture}.spec.ts",
-    "*.tsx": "${capture}.test.tsx, ${capture}.spec.tsx, ${capture}.module.css",
-    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
-    "tailwind.config.*": "postcss.config.*",
-    "next.config.*": "next-env.d.ts"
-  }
+    // Editor formatting
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    // File associations for MDX
+    "files.associations": {
+        "*.mdx": "mdx"
+    },
+    // Tailwind CSS IntelliSense
+    "tailwindCSS.experimental.classRegex": [
+        [
+            "cva\\(([^)]*)\\)",
+            "[\"'`]([^\"'`]*).*?[\"'`]"
+        ],
+        [
+            "cn\\(([^)]*)\\)",
+            "(?:'|\"|`)([^']*)(?:'|\"|`)"
+        ]
+    ],
+    "tailwindCSS.includeLanguages": {
+        "typescript": "javascript",
+        "typescriptreact": "javascript",
+        "mdx": "html"
+    },
+    // TypeScript
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    // Search exclusions (performance)
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/.next": true,
+        "**/out": true,
+        "**/.vercel": true
+    },
+    // File nesting for cleaner explorer
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.test.ts, ${capture}.spec.ts",
+        "*.tsx": "${capture}.test.tsx, ${capture}.spec.tsx, ${capture}.module.css",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+        "tailwind.config.*": "postcss.config.*",
+        "next.config.*": "next-env.d.ts"
+    }
 }

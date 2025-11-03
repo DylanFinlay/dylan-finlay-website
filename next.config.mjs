@@ -1,4 +1,4 @@
-import createMDX from '@next/mdx';
+import createMDX from "@next/mdx";
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
@@ -7,7 +7,7 @@ const withMDX = createMDX({
 const nextConfig = {
   reactStrictMode: true,
   reactCompiler: true,
-  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+  pageExtensions: ["ts", "tsx", "md", "mdx"],
 };
 
 export default withMDX(nextConfig);

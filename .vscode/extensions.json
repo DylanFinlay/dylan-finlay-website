@@ -1,11 +1,11 @@
 {
-  "recommendations": [
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
-    "bradlc.vscode-tailwindcss",
-    "unifiedjs.vscode-mdx",
-    "usernamehw.errorlens",
-    "christian-kohler.path-intellisense",
-    "yoavbls.pretty-ts-errors"
-  ]
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "unifiedjs.vscode-mdx",
+        "usernamehw.errorlens",
+        "christian-kohler.path-intellisense",
+        "yoavbls.pretty-ts-errors"
+    ]
 }

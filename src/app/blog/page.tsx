@@ -1,8 +1,8 @@
-import { getAllPosts } from '@/lib/mdx';
-import Card from '@/components/Card';
+import { getAllPosts } from "@/lib/mdx";
+import Card from "@/components/Card";
 
 export default function BlogPage() {
-  const posts = getAllPosts('blog');
+  const posts = getAllPosts("blog");
 
   return (
     <section className="max-w-4xl mx-auto px-4">

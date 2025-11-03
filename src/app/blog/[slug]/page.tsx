@@ -1,19 +1,23 @@
-import { getPostBySlug, getAllPosts, getContentPath } from '@/lib/mdx';
-import fs from 'fs';
-import matter from 'gray-matter';
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import { getPostBySlug, getAllPosts, getContentPath } from "@/lib/mdx";
+import fs from "fs";
+import matter from "gray-matter";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 export async function generateStaticParams() {
-  const posts = getAllPosts('blog');
+  const posts = getAllPosts("blog");
   return posts.map((post: any) => ({
     slug: post.slug,
   }));
 }
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
-  const filePath = getContentPath('blog', `${slug}.mdx`);
-  const source = fs.readFileSync(filePath, 'utf8');
+  const filePath = getContentPath("blog", `${slug}.mdx`);
+  const source = fs.readFileSync(filePath, "utf8");
   const { content, data } = matter(source);
 
   return (
