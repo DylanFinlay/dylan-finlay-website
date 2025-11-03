@@ -11,11 +11,15 @@ export default function Card({ title, summary, href, date }: CardProps) {
   return (
     <Link
       href={href}
-      className="block p-4 border rounded-lg hover:shadow-md transition-shadow"
+      className="group block rounded-lg border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-blue-200 hover:shadow-lg"
     >
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      {date && <p className="text-sm text-gray-500 mb-2">{date}</p>}
-      {summary && <p className="text-gray-700">{summary}</p>}
+      <h3 className="mb-2 text-xl font-semibold text-slate-900 transition-colors group-hover:text-blue-600">
+        {title}
+      </h3>
+      {date && (
+        <p className="mb-3 text-sm font-medium text-slate-500">{date}</p>
+      )}
+      {summary && <p className="text-slate-600 line-clamp-2">{summary}</p>}
     </Link>
   );
 }

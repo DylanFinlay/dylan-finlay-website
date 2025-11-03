@@ -1,13 +1,18 @@
-import { getAllPosts } from "@/lib/mdx";
 import Card from "@/components/Card";
+import { getAllPosts } from "@/lib/mdx";
 
 export default function BlogPage() {
   const posts = getAllPosts("blog");
 
   return (
-    <section className="max-w-4xl mx-auto px-4">
-      <h1 className="text-4xl font-bold mb-8">Blog</h1>
-      <div className="grid gap-6">
+    <section className="container-custom">
+      <div className="mb-12">
+        <h1 className="mb-3">Blog</h1>
+        <p className="text-lg text-slate-600">
+          Thoughts on photography, development, and travel.
+        </p>
+      </div>
+      <div className="grid gap-6 md:grid-cols-2">
         {posts.map((post: any) => (
           <Card
             key={post.slug}

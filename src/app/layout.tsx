@@ -1,7 +1,7 @@
-import "../styles/globals.css";
-import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import type { Metadata } from "next";
+import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Dylan Finlay",
@@ -15,9 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-white text-slate-900">
+      <body className="min-h-screen bg-slate-50 text-slate-800">
         <Navbar />
-        <main className="py-8">{children}</main>
+        <main className="section-spacing">{children}</main>
         <Footer />
       </body>
     </html>

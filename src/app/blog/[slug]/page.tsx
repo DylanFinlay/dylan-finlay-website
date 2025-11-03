@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPosts, getContentPath } from "@/lib/mdx";
+import { getAllPosts, getContentPath } from "@/lib/mdx";
 import fs from "fs";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -21,12 +21,14 @@ export default async function BlogPost({
   const { content, data } = matter(source);
 
   return (
-    <article className="max-w-4xl mx-auto px-4">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold mb-2">{data.title}</h1>
-        {data.date && <p className="text-gray-600">{data.date}</p>}
+    <article className="container-custom">
+      <header className="mb-12 max-w-3xl">
+        <h1 className="mb-4">{data.title}</h1>
+        {data.date && (
+          <p className="text-base font-medium text-slate-500">{data.date}</p>
+        )}
       </header>
-      <div className="prose">
+      <div className="prose prose-lg prose-slate mx-auto">
         <MDXRemote source={content} />
       </div>
     </article>
