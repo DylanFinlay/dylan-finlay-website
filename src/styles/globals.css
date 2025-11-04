@@ -33,7 +33,7 @@
 /* BASE STYLES                                                       */
 /* ================================================================= */
 * {
-  border-color: var(--neutral-200);
+  border-color: var(--neutral-50);
 }
 
 html {
@@ -42,7 +42,7 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: #f1f5f9;
   color: var(--neutral-800);
 }
 

@@ -1,233 +1,94 @@
-import Image from "next/image";
+export default function PortfolioExperience() {
+  const professionalExperience = [
+    {
+      title: "Incoming Software Engineer Intern",
+      company: "German Aerospace Center (DLR)",
+      period: "Jan 2026 - Apr 2026",
+      description:
+        "I am excited to soon be joining the DLR team in Stuttgart, Germany, where I will be working on a python-based simulation framework for hydrogen and electric powered trains.",
+    },
+    {
+      title: "Software Engineer Intern",
+      company: "Ford Pro",
+      period: "May 2025 - Aug 2025",
+      description:
+        "Worked on Ford Pro's Order Management team, where I helped build and maintain fulfillment services across the stack. I focused on developing a Java Spring API for syncing legacy orders, modernizing microservices, and improving CI/CD pipelines with Tekton in GCP.",
+    },
+    {
+      title: "Software Developer Intern",
+      company: "Solace",
+      period: "Sept 2024 - Dec 2024",
+      description:
+        "Worked on Solace's Micro-Integrations (MI) team, where I worked on test automation and development. I focused on developing the E2E Java test suite for the newest Cloud Integrations, along with improving the Python tooling for automation through Github Actions.",
+    },
+    {
+      title: "Software Developer Intern",
+      company: "Solace",
+      period: "Jan 2024 - Apr 2024",
+      description:
+        "Focused on enhancing back-end infrastructure for testing tools, particularly supporting Solace's EDA messaging solution. Leveraging my proficiency in Python, C, and bash scripting, I contributed to optimizing efficiency and functionality during my term.",
+    },
+    {
+      title: "Software Engineer Intern",
+      company: "Shyftlabs",
+      period: "May 2023 - Aug 2023",
+      description:
+        "Designed, implemented and deployed the REST API for a robust python web scraper empowering developers to effortlessly extract open graph tags from diverse websites.",
+    },
+  ];
 
-const Experience = () => {
+  const designTeams = [
+    {
+      title: "Co-Founder & Software Team Lead",
+      company: "UW RoboSoccer",
+      period: "Aug 2024 - present",
+      description:
+        "Co-Founder of Waterloo's newest SDC design team. Our group aims to compete in the global RoboCup competition, where we will present a group of humanoid robots to autonomously compete in 4v4 soccer matches. The Software/ML/AI Team is responsible for developing the algorithms that drive our humanoid robots. This includes computer vision for recognizing the ball and opponents, decision-making algorithms for strategic play, and machine learning models to improve robot performance over time.",
+    },
+    {
+      title: "Autonomous Airside Project Manager",
+      company: "WARG",
+      period: "Sept 2023 - Sept 2024",
+      description:
+        "A project manager in the Waterloo Aerial Robotics Group design team, leading the team in charge of writing code for the autonomous flight of WARG's custom drone. My focus revolves around Python software development for drone autonomy. This encompasses computer vision code, path planning, and more.",
+    },
+  ];
+
   return (
-    <div
-      id="experience"
-      className="w-full min-h-screen py-12 flex items-center text-gray-300 bg-[#0a192f]"
-    >
-      <div className="max-w-[1500px] mx-auto xl:px-40 lg:px-20 md:px-12 sm:px-8 px-4 p-4 flex flex-col justify-center w-full h-full">
-        <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 text-gray-300 border-pink-600">
-            Experience
-          </p>
-          <p className="py-6">
-            {/* A little look at my past experience in the field */}
-          </p>
-        </div>
-        {/* Timeline Starts below this */}
-        <section className="shadow-xl shadow-[#040c16] text-gray-100">
-          <div className="container max-w-5xl px-4 py-12 mx-auto">
-            <div className="grid gap-4 mx-4 sm:grid-cols-12">
-              <div className="col-span-12 sm:col-span-3">
-                <div className="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-pink-600">
-                  <h3 className="text-3xl font-semibold">Dylan Finlay</h3>
-                  <span className="text-sm font-bold tracki uppercase text-gray-400">
-                    Professional Experience
-                  </span>
-                  <div className="flex pt-6 justify-center sm:justify-start">
-                    <Image
-                      className="w-auto h-auto max-h-[200px] object-cover shadow-sm shadow-pink-600"
-                      src="/assets/portfolio/programming2.jpg"
-                      alt="Programming Pic"
-                      width={200}
-                      height={200}
-                    />
-                  </div>
-                </div>
+    <section className="container-custom section-spacing">
+      {/* Professional Experience */}
+      <div className="mb-16">
+        <h2 className="mb-8">Professional Experience</h2>
+        <div className="space-y-6">
+          {professionalExperience.map((exp, index) => (
+            <div key={index} className="tile-light">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
+                <h4 className="text-xl font-semibold">{exp.title}</h4>
+                <span className="text-sm font-medium">{exp.period}</span>
               </div>
-              <div className="col-span-12 space-y-12 sm:col-span-9">
-                <div className="grid grid-cols-1 sm:grid-cols-8 gap-4">
-                  <div className="col-span-1 hidden sm:flex items-center justify-center">
-                    <div className="w-4 h-4 rounded-full bg-pink-600"></div>
-                  </div>
-                  <div className="col-span-7">
-                    <h3 className="text-xl font-semibold tracki">
-                      Incoming Software Engineer Intern || German Aerospace
-                      Center (DLR)
-                    </h3>
-                    <time className="text-xs tracki uppercase text-gray-400">
-                      Jan 2026 - Apr 2026
-                    </time>
-                    <p className="mt-3">
-                      I am excited to soon be joining the DLR team in Stuttgart,
-                      Germany, where I will be working on a python-based
-                      simulation framework for hydrogen and electric powered
-                      trains.
-                    </p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-8 gap-4">
-                  <div className="col-span-1 hidden sm:flex items-center justify-center">
-                    <div className="w-4 h-4 rounded-full bg-pink-600"></div>
-                  </div>
-                  <div className="col-span-7">
-                    <h3 className="text-xl font-semibold tracki">
-                      Software Engineer Intern || Ford Pro
-                    </h3>
-                    <time className="text-xs tracki uppercase text-gray-400">
-                      May 2025 - Aug 2025
-                    </time>
-                    <p className="mt-3">
-                      Worked on Ford Pro’s Order Management team, where I helped
-                      build and maintain fulfillment services across the stack.
-                      I focused on developing a Java Spring API for syncing
-                      legacy orders, modernizing microservices, and improving
-                      CI/CD pipelines with Tekton in GCP.
-                    </p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-8 gap-4">
-                  <div className="col-span-1 hidden sm:flex items-center justify-center">
-                    <div className="w-4 h-4 rounded-full bg-pink-600"></div>
-                  </div>
-                  <div className="col-span-7">
-                    <h3 className="text-xl font-semibold tracki">
-                      Software Developer Intern || Solace
-                    </h3>
-                    <time className="text-xs tracki uppercase text-gray-400">
-                      Sept 2024 - Dec 2024
-                    </time>
-                    <p className="mt-3">
-                      Worked on Solace&apos;s Micro-Integrations (MI) team,
-                      where I worked on test automation and development. I
-                      focused on developing the E2E Java test suite for the
-                      newest Cloud Integrations, along with improving the Python
-                      tooling for automation through Github Actions.
-                    </p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-8 gap-4">
-                  <div className="col-span-1 hidden sm:flex items-center justify-center">
-                    <div className="w-4 h-4 rounded-full bg-pink-600"></div>
-                  </div>
-                  <div className="col-span-7">
-                    <h3 className="text-xl font-semibold tracki">
-                      Software Developer Intern || Solace
-                    </h3>
-                    <time className="text-xs tracki uppercase text-gray-400">
-                      Jan 2024 - Apr 2024
-                    </time>
-                    <p className="mt-3">
-                      Focused on enhancing back-end infrastructure for testing
-                      tools, particularly supporting Solace&apos;s EDA messaging
-                      solution. Leveraging my proficiency in Python, C, and bash
-                      scripting, I contributed to optimizing efficiency and
-                      functionality during my term.
-                    </p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-8 gap-4">
-                  <div className="col-span-1 hidden sm:flex items-center justify-center">
-                    <div className="w-4 h-4 rounded-full bg-pink-600"></div>
-                  </div>
-                  <div className="col-span-7">
-                    <h3 className="text-xl font-semibold tracki">
-                      Software Engineer Intern || Shyftlabs
-                    </h3>
-                    <time className="text-xs tracki uppercase text-gray-400">
-                      May 2023 - Aug 2023
-                    </time>
-                    <p className="mt-3">
-                      Designed, implemented and deployed the REST API for a
-                      robust python web scraper empowering developers to
-                      effortlessly extract open graph tags from diverse
-                      websites.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-lg font-medium mb-3">{exp.company}</p>
+              <p className="leading-relaxed">{exp.description}</p>
             </div>
-          </div>
-        </section>
-        {/* First Timeline Ends here */}
-        <div className="p-12">
-          <p className="text-4xl font-italic inline border-b-4 text-gray-300 border-pink-600">
-            Design Teams
-          </p>
+          ))}
         </div>
-        <section className="shadow-xl shadow-[#040c16] text-gray-100">
-          <div className="container max-w-5xl px-4 py-12 mx-auto">
-            <div className="grid gap-4 mx-4 sm:grid-cols-12">
-              <div className="col-span-12 space-y-12 sm:col-span-9">
-                <div className="grid grid-cols-1 sm:grid-cols-10 gap-4">
-                  <div className="col-span-1 hidden sm:flex items-center justify-center">
-                    <div className="w-4 h-4 rounded-full bg-pink-600"></div>
-                  </div>
-                  <div className="col-span-8">
-                    <h3 className="text-xl font-semibold tracki">
-                      Co-Founder & Software Team Lead || UW RoboSoccer
-                    </h3>
-                    <time className="text-xs tracki uppercase text-gray-400">
-                      Aug 2024 - present
-                    </time>
-                    <p className="mt-3">
-                      Co-Founder of Waterloo&apos;s newest SDC design team. Our
-                      group aims to compete in the global RoboCup competition,
-                      where we will present a group of humanoid robots to
-                      autonomously compete in 4v4 soccer matches. The
-                      Software/ML/AI Team is responsible for developing the
-                      algorithms that drive our humanoid robots. This includes
-                      computer vision for recognizing the ball and opponents,
-                      decision-making algorithms for strategic play, and machine
-                      learning models to improve robot performance over time.
-                    </p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-10 gap-4">
-                  <div className="col-span-1 hidden sm:flex items-center justify-center">
-                    <div className="w-4 h-4 rounded-full bg-pink-600"></div>
-                  </div>
-                  <div className="col-span-8">
-                    <h3 className="text-xl font-semibold tracki">
-                      Autonomous Airside Project Manager || WARG
-                    </h3>
-                    <time className="text-xs tracki uppercase text-gray-400">
-                      Sept 2023 - Sept 2024
-                    </time>
-                    <p className="mt-3">
-                      A project manager in the Waterloo Aerial Robotics Group
-                      design team, leading the team in charge of writing code
-                      for the autonomous flight of WARG&apos;s custom drone. My
-                      focus revolves around Python software development for
-                      drone autonomy. This encompasses computer vision code,
-                      path planning, and more.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-span-12 sm:col-span-3">
-                <div className="text-center sm:text-right mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 sm:before:ml-auto before:bg-pink-600">
-                  <h3 className="text-2xl font-semibold">
-                    Design Team Experience
-                  </h3>
-                  <div className="flex pt-6 justify-center sm:justify-end">
-                    <Image
-                      className="w-auto h-auto max-h-[200px] object-cover shadow-sm shadow-pink-600"
-                      src="/assets/portfolio/robocup_robot.png"
-                      alt="Programming Pic"
-                      width={200}
-                      height={200}
-                    />
-                  </div>
-                  <div className="flex pt-6 justify-center sm:justify-end">
-                    <Image
-                      className="w-auto h-auto max-h-[200px] object-cover shadow-sm shadow-pink-600"
-                      src="/assets/portfolio/warg_drone.jpg"
-                      alt="Programming Pic"
-                      width={200}
-                      height={200}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* Timeline ends here */}
       </div>
-    </div>
-  );
-};
 
-export default Experience;
+      {/* Design Team Experience */}
+      <div>
+        <h2 className="mb-8">Design Team Experience</h2>
+        <div className="space-y-6">
+          {designTeams.map((exp, index) => (
+            <div key={index} className="tile-light">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
+                <h4 className="text-xl font-semibold">{exp.title}</h4>
+                <span className="text-sm font-medium">{exp.period}</span>
+              </div>
+              <p className="text-lg font-medium mb-3">{exp.company}</p>
+              <p className="leading-relaxed">{exp.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

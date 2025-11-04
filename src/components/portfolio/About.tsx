@@ -1,58 +1,38 @@
 import Image from "next/image";
 
-const About = () => {
+export default function PortfolioAbout() {
   return (
-    <div
-      id="about"
-      className="w-full min-h-screen py-12 flex items-center bg-[#0a192f] text-gray-300"
-    >
-      <div className="flex flex-col justify-center items-center w-full h-full">
-        <div className="max-w-[1500px] xl:px-40 lg:px-20 md:px-12 sm:px-8 px-4 w-full grid sm:grid-cols-3 gap-2">
-          <div className="hidden p-4 sm:flex justify-center items-center col-span-1">
+    <section className="container-custom section-spacing">
+      <div className="tile-light">
+        <div className="grid gap- md:grid-cols-2 items-center">
+          <div className="space-y-4">
+            <h2 className="mb-12">About Me</h2>
+            <p className="text-lg leading-relaxed">
+              Hi, I&apos;m Dylan—a Mechatronics Engineering student at the
+              University of Waterloo. I&apos;m passionate about building
+              autonomous systems, robotics, and pushing the boundaries of what
+              technology can do.
+            </p>
+            <p className="leading-relaxed">
+              I have a strong foundation in software development, particularly
+              in autonomous systems, backend development, and embedded
+              programming. I&apos;m deeply involved in projects related to
+              robotics and software, such as designing autonomous drones and
+              creating a fleet of robots to autonomously compete in soccer
+              games.
+            </p>
+          </div>
+          <div className="flex justify-center">
             <Image
-              className="w-auto h-auto max-h-[400px] object-cover shadow-lg shadow-pink-600"
               src="/assets/portfolio/dettifoss-selfie.jpg"
-              alt="Personal Pic"
+              alt="Dylan Finlay"
               width={400}
               height={400}
+              className="rounded-xl shadow-lg object-cover"
             />
-          </div>
-          <div className="col-span-2">
-            <div className="max-w-[1000px] w-full grid grid-cols-2 gap-8">
-              <div className="pb-8 pl-4">
-                <p className="text-4xl font-bold inline border-b-4 border-pink-600">
-                  About{" "}
-                </p>
-              </div>
-              <div></div>
-            </div>
-            <div className="max-w-[1000px] w-full grid md:grid-cols-2 gap-8 px-4">
-              <div className="md:text-left text-3xl font-bold">
-                <p>
-                  Hi again, welcome to my portfolio. Thank you for taking the
-                  time to check it out, and feel free to reach out to me if you
-                  have any questions or just want to connect!
-                </p>
-              </div>
-              <div className="text-gray-400">
-                <p>
-                  I have a strong foundation in software development,
-                  particularly in areas such as autonomous systems, backend
-                  development, and embedded programming. I&apos;m deeply
-                  involved in projects related to robotics and software, such as
-                  designing autonomous drones and creating/programming a fleet
-                  of robots to autonomously compete in soccer games (coming
-                  soon!!!). I like to push the boundaries of technology and I
-                  enjoy diving into challenging engineering tasks with my
-                  friends!
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default About;
+}

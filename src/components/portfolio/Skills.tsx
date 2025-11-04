@@ -1,68 +1,47 @@
 import Image from "next/image";
 
-const Skills = () => {
+export default function PortfolioSkills() {
   const skills = [
-    { name: "Python", img: "/assets/portfolio/Python.png", py: "py-1" },
-    { name: "C++", img: "/assets/portfolio/Cpp.png", py: "py-1" },
-    { name: "C", img: "/assets/portfolio/C.png", py: "py-1" },
-    { name: "Java", img: "/assets/portfolio/java.png", py: "py-1" },
-    { name: "Bash", img: "/assets/portfolio/bash.png", py: "py-1" },
-    { name: "Javascript", img: "/assets/portfolio/JavaScript.png", py: "py-2" },
-    { name: "HTML", img: "/assets/portfolio/Html.png", py: "py-1" },
-    { name: "Tailwind CSS", img: "/assets/portfolio/Tailwind.png", py: "py-1" },
-    { name: "React.js", img: "/assets/portfolio/React.png", py: "py-3" },
-    { name: "Node.js", img: "/assets/portfolio/Node.png", py: "py-1" },
-    { name: "VS Code", img: "/assets/portfolio/VScode.png", py: "py-1" },
-    { name: "Postman", img: "/assets/portfolio/Postman.png", py: "py-1" },
-    { name: "Git", img: "/assets/portfolio/Git.png", py: "py-1" },
-    { name: "GitHub", img: "/assets/portfolio/Github.png", py: "py-1" },
-    { name: "Linux", img: "/assets/portfolio/Linux.png", py: "py-1" },
-    {
-      name: "Docker",
-      img: "/assets/portfolio/Docker.png",
-      py: "py-4",
-      w: "w-28",
-    },
-    { name: "SolidWorks", img: "/assets/portfolio/Solidworks.png", py: "py-1" },
-    { name: "AutoCAD", img: "/assets/portfolio/Autocad.png", py: "py-1" },
+    { name: "Python", img: "/assets/portfolio/Python.png" },
+    { name: "C++", img: "/assets/portfolio/Cpp.png" },
+    { name: "C", img: "/assets/portfolio/C.png" },
+    { name: "Java", img: "/assets/portfolio/java.png" },
+    { name: "JavaScript", img: "/assets/portfolio/JavaScript.png" },
+    { name: "Bash", img: "/assets/portfolio/bash.png" },
+    { name: "React.js", img: "/assets/portfolio/React.png" },
+    { name: "Node.js", img: "/assets/portfolio/Node.png" },
+    { name: "HTML", img: "/assets/portfolio/Html.png" },
+    { name: "Tailwind CSS", img: "/assets/portfolio/Tailwind.png" },
+    { name: "Git", img: "/assets/portfolio/Git.png" },
+    { name: "GitHub", img: "/assets/portfolio/Github.png" },
+    { name: "Docker", img: "/assets/portfolio/Docker.png" },
+    { name: "Linux", img: "/assets/portfolio/Linux.png" },
+    { name: "VS Code", img: "/assets/portfolio/VScode.png" },
+    { name: "Postman", img: "/assets/portfolio/Postman.png" },
+    { name: "SolidWorks", img: "/assets/portfolio/Solidworks.png" },
+    { name: "AutoCAD", img: "/assets/portfolio/Autocad.png" },
   ];
 
   return (
-    <div
-      id="skills"
-      className="w-full py-12 min-h-screen flex items-center bg-[#0a192f] text-gray-300"
-    >
-      {/*Container*/}
-      <div className="max-w-[1500px] mx-auto xl:px-40 lg:px-20 md:px-12 sm:px-8 px-4 p-4 flex flex-col justify-center w-full h-full">
-        <div>
-          <p className="text-4xl font-bold inline border-b-4 border-pink-600">
-            Skills
-          </p>
-          <p className="py-4">
-            {/* These are some of the technologies I&apos;ve worked with */}
-          </p>
-        </div>
-
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 text-center py-8">
-          {skills.map((skill) => (
-            <div
-              key={skill.name}
-              className="shadow-md shadow-[#040c16] hover:scale-110 duration-500"
-            >
-              <Image
-                className={`${skill.w || "w-20"} mx-auto`}
-                src={skill.img}
-                alt={`${skill.name} Icon`}
-                width={80}
-                height={80}
-              />
-              <p className={skill.py}>{skill.name}</p>
-            </div>
-          ))}
-        </div>
+    <section className="container-custom section-spacing">
+      <h2 className="mb-8">Skills</h2>
+      <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 gap-4">
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className="tile flex flex-col items-center justify-center p-3 hover:scale-105 transition-transform"
+          >
+            <Image
+              src={skill.img}
+              alt={`${skill.name} icon`}
+              width={48}
+              height={48}
+              className="mb-2 object-contain"
+            />
+            <p className="text-xs font-medium text-center">{skill.name}</p>
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Skills;
+}
