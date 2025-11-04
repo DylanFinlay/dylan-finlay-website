@@ -19,7 +19,7 @@ export default function BlogPage() {
           Thoughts on photography, development, and travel.
         </p>
       </div>
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6">
         {posts.map((post) => (
           <BlogCard
             key={post.slug}
