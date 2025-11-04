@@ -1,4 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dylan Finlay's Personal Website
+
+A modern personal website built with Next.js 15, featuring a blog, portfolio, and project showcase with a clean tile-based design.
+
+## 🎨 Customizing Colors
+
+Edit CSS variables at the top of `src/styles/globals.css`:
+
+```css
+:root {
+  --primary-600: #2563eb; /* Main blue */
+  --primary-700: #1d4ed8; /* Hover state */
+  --neutral-700: #334155; /* Body text */
+}
+```
+
+All component classes (`.tile-light`, `.btn-primary`, etc.) use these variables. Change once, update entire site.
+
+📖 See [COLOR_SYSTEM.md](COLOR_SYSTEM.md) for examples
+
+---
 
 ## Getting Started
 

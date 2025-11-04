@@ -25,10 +25,10 @@ export default async function BlogPost({
       <header className="mb-12 max-w-3xl">
         <h1 className="mb-4">{data.title}</h1>
         {data.date && (
-          <p className="text-base font-medium text-slate-500">{data.date}</p>
+          <p className="text-base font-medium text-neutral-500">{data.date}</p>
         )}
       </header>
-      <div className="prose prose-lg prose-slate mx-auto">
+      <div className="prose prose-lg mx-auto">
         <MDXRemote source={content} />
       </div>
     </article>
