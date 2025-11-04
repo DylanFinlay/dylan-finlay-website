@@ -27,6 +27,38 @@
   --neutral-700: #334155;
   --neutral-800: #1e293b;
   --neutral-900: #0f172a;
+
+  /* Refreshing Summer Fun Color Palette */
+  --rsf-light-blue: #8ecae6;
+  --rsf-teal: #219ebc;
+  --rsf-navy: #023047;
+  --rsf-yellow: #ffb703;
+  --rsf-orange: #fb8500;
+
+  /* Mediterranean Breeze Color Palette */
+  --med-sand: #fdf5e6;
+  --med-orange: #f0a500; /* FAVORITE */
+  --med-light-blue: #77c9d4;
+  --med-turquoise: #57a99a;
+  --med-navy: #1c3d5a;
+
+  /* Dark Blue and Yellow Palette */
+  --dby-blue-1: #00296b;
+  --dby-blue-2: #003f88;
+  --dby-blue-3: #00509d;
+  --dby-yellow-1: #fdc500;
+  --dby-yellow-2: #ffd500;
+
+  /* Ocean Blue Palette */
+  --ob-1: #03045e;
+  --ob-2: #023e8a;
+  --ob-3: #0077b6;
+  --ob-4: #0096c7;
+  --ob-5: #00b4d8;
+  --ob-6: #48cae4;
+  --ob-7: #90e0ef;
+  --ob-8: #ade8f4;
+  --ob-9: #caf0f8;
 }
 
 /* ================================================================= */
@@ -42,7 +74,7 @@ html {
 }
 
 body {
-  background-color: #f1f5f9;
+  background-color: var(--med-sand);
   color: var(--neutral-800);
 }
 
@@ -56,7 +88,7 @@ h4,
 h5,
 h6 {
   font-weight: 600;
-  color: var(--neutral-900);
+  color: var(--ob-1);
   letter-spacing: -0.02em;
 }
 
@@ -79,6 +111,26 @@ a {
 
   &:hover {
     color: var(--primary-700);
+  }
+}
+
+.nav-link {
+  color: var(--rsf-orange);
+  @apply transition-colors rounded-md px-3 py-2 text-sm font-medium;
+
+  &:hover {
+    color: var(--ob-1);
+    @apply bg-amber-100;
+  }
+}
+
+.nav-home-link {
+  color: var(--rsf-orange);
+  @apply transition-colors text-xl font-extrabold tracking-tight;
+
+  &:hover {
+    color: var(--ob-1);
+    @apply bg-amber-100;
   }
 }
 
@@ -134,14 +186,15 @@ a {
 /* BUTTONS                                                           */
 /* ================================================================= */
 .btn-primary {
-  background-color: var(--primary-600);
+  background-color: var(--ob-3);
   color: white;
   @apply px-6 py-3 rounded-xl font-medium shadow-sm;
   @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
   transition: all 0.2s;
 
   &:hover {
-    background-color: var(--primary-700);
+    background-color: var(--ob-4);
+    color: white;
     @apply shadow-md;
   }
 }
@@ -177,8 +230,8 @@ a {
 /* ================================================================= */
 /* TILES & CARDS                                                     */
 /* ================================================================= */
-.tile-light {
-  background-color: var(--primary-400);
+.tile-light-blue-clickable {
+  background-color: var(--ob-6);
   border: 1px solid var(--neutral-100);
   @apply rounded-xl p-6;
   transition: all 0.2s;
@@ -188,7 +241,7 @@ a {
   }
 
   &:hover {
-    background-color: var(--primary-200);
+    background-color: var(--ob-9);
     border-color: var(--primary-200);
     @apply shadow-md -translate-y-0.5;
 
@@ -198,56 +251,31 @@ a {
   }
 }
 
-.tile-dark {
-  background-color: var(--primary-700);
+.tile-light-blue {
+  background-color: var(--ob-5);
+  border: 1px solid var(--neutral-100);
+  @apply rounded-xl p-6;
+  transition: all 0.2s;
+
+  p {
+    color: var(--neutral-900);
+  }
+
+  &:hover {
+    border-color: var(--neutral-900);
+    @apply shadow-lg -translate-y-1;
+  }
+}
+
+.tile-orange {
+  background-color: var(--rsf-yellow);
   color: white;
   @apply rounded-xl p-6;
   transition: all 0.2s;
 
   &:hover {
-    background-color: var(--primary-300);
-    @apply shadow-lg;
+    @apply shadow-lg/20;
   }
 }
 
-.card {
-  background-color: white;
-  border: 1px solid var(--neutral-200);
-  @apply rounded-xl overflow-hidden;
-  transition: all 0.2s;
-
-  &:hover {
-    border-color: var(--primary-200);
-    @apply shadow-lg -translate-y-1;
-  }
-}
-
-.card-header {
-  border-bottom: 1px solid var(--neutral-100);
-  @apply p-6;
-}
-
-.card-body {
-  @apply p-6;
-}
-
-.card-footer {
-  background-color: var(--neutral-50);
-  border-top: 1px solid var(--neutral-100);
-  @apply p-6;
-}
-
 /* ================================================================= */
-/* USAGE                                                             */
-/* ================================================================= */
-/*
-To change colors: Edit CSS variables at top of file
-
-Component classes:
-- .tile-light: Content cards (blog posts, projects)
-- .tile-accent: Emphasized content
-- .tile-primary: Call-to-actions
-- .btn-primary: Primary actions
-- .btn-secondary: Secondary actions
-- .card: Structured content with header/body/footer
-*/

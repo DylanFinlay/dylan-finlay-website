@@ -75,7 +75,7 @@ export default function PortfolioProjects() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="tile-light group"
+            className="tile-light-blue group"
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${project.image})`,
               backgroundSize: "cover",

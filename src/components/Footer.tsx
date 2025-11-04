@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="w-full border-t mt-12">
       <div className="container-custom section-spacing">
-        <div className="tile-dark text-center">
+        <div className="tile-orange text-center">
           <h3 className="mb-4">Get in Touch</h3>
           <p className="mb-6">
             Feel free to reach out for opportunities, collaborations, or just to
@@ -13,7 +13,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link
-              href="https://linkedin.com/in/dylanfinlay"
+              href="https://linkedin.com/in/dylanfinlay33"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-2"
@@ -31,7 +31,7 @@ export default function Footer() {
               GitHub
             </Link>
             <Link
-              href="mailto:dylan.finlay@uwaterloo.ca"
+              href="mailto:decfinla@uwaterloo.ca"
               className="btn-outline inline-flex items-center gap-2"
             >
               <Mail size={20} />

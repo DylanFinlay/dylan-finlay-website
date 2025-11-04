@@ -61,7 +61,7 @@ export default function PortfolioExperience() {
         <h2 className="mb-8">Professional Experience</h2>
         <div className="space-y-6">
           {professionalExperience.map((exp, index) => (
-            <div key={index} className="tile-light">
+            <div key={index} className="tile-light-blue">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
                 <h4 className="text-xl font-semibold">{exp.title}</h4>
                 <span className="text-sm font-medium">{exp.period}</span>
@@ -78,7 +78,7 @@ export default function PortfolioExperience() {
         <h2 className="mb-8">Design Team Experience</h2>
         <div className="space-y-6">
           {designTeams.map((exp, index) => (
-            <div key={index} className="tile-light">
+            <div key={index} className="tile-light-blue">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
                 <h4 className="text-xl font-semibold">{exp.title}</h4>
                 <span className="text-sm font-medium">{exp.period}</span>

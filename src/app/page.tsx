@@ -16,19 +16,22 @@ export default function Home() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <Link href="/blog" className="tile-light group block">
+        <Link href="/blog" className="tile-light-blue-clickable group block">
           <h2 className="mb-2 text-2xl group-hover:text-primary-600">Blog</h2>
           <p>Thoughts on photography, development, and travel.</p>
         </Link>
 
-        <Link href="/projects" className="tile-light group block">
+        <Link
+          href="/projects"
+          className="tile-light-blue-clickable group block"
+        >
           <h2 className="mb-2 text-2xl group-hover:text-primary-600">
             Projects
           </h2>
           <p>Showcase of my technical work and experiments.</p>
         </Link>
 
-        <Link href="/gear" className="tile-light group block">
+        <Link href="/gear" className="tile-light-blue-clickable group block">
           <h2 className="mb-2 text-2xl group-hover:text-primary-600">Gear</h2>
           <p>Photography and videography equipment I use.</p>
         </Link>

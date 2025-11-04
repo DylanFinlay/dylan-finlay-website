@@ -1,4 +1,4 @@
-import Card from "@/components/Card";
+import BlogCard from "@/components/BlogCard";
 import { getAllPosts } from "@/lib/mdx";
 
 interface Post {
@@ -21,7 +21,7 @@ export default function BlogPage() {
       </div>
       <div className="grid gap-6 md:grid-cols-2">
         {posts.map((post) => (
-          <Card
+          <BlogCard
             key={post.slug}
             title={post.title}
             summary={post.summary}

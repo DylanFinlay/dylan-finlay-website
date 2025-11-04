@@ -7,9 +7,9 @@ interface CardProps {
   date?: string;
 }
 
-export default function Card({ title, summary, href, date }: CardProps) {
+export default function BlogCard({ title, summary, href, date }: CardProps) {
   return (
-    <Link href={href} className="tile-light group block">
+    <Link href={href} className="tile-light-blue-clickable group block">
       <h3 className="mb-2 text-xl font-semibold group-hover:text-primary-600">
         {title}
       </h3>
