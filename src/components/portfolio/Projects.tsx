@@ -70,52 +70,54 @@ export default function PortfolioProjects() {
 
   return (
     <section className="container-custom section-spacing">
-      <h2 className="mb-12">Projects</h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="tile-light-blue group"
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${project.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              minHeight: "280px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-end",
-            }}
-          >
-            <div className="bg-white/95 backdrop-blur-sm p-4 rounded-lg">
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-sm mb-4">{project.description}</p>
-              <div className="flex gap-2">
-                {project.github && (
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-secondary text-sm py-2 px-4 inline-flex items-center gap-2"
-                  >
-                    <Github size={16} />
-                    Code
-                  </Link>
-                )}
-                {project.demo && (
-                  <Link
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary text-sm py-2 px-4 inline-flex items-center gap-2"
-                  >
-                    <ExternalLink size={16} />
-                    Demo
-                  </Link>
-                )}
+      <div className="tile-light-blue">
+        <h2 className="mb-12">Projects</h2>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="tile-light-blue group"
+              style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${project.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                minHeight: "280px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
+              }}
+            >
+              <div className="bg-white/95 backdrop-blur-sm p-4 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-sm mb-4">{project.description}</p>
+                <div className="flex gap-2">
+                  {project.github && (
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-secondary text-sm py-2 px-4 inline-flex items-center gap-2"
+                    >
+                      <Github size={16} />
+                      Code
+                    </Link>
+                  )}
+                  {project.demo && (
+                    <Link
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary text-sm py-2 px-4 inline-flex items-center gap-2"
+                    >
+                      <ExternalLink size={16} />
+                      Demo
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

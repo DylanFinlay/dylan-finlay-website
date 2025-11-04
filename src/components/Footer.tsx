@@ -3,9 +3,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t mt-12">
+    <footer className="w-full mt-2">
       <div className="container-custom section-spacing">
-        <div className="tile-orange text-center">
+        <div className="border-t border-ob-3"></div>
+        <div className="mt-6 tile-orange text-center">
           <h3 className="mb-4">Get in Touch</h3>
           <p className="mb-6">
             Feel free to reach out for opportunities, collaborations, or just to

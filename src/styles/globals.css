@@ -45,9 +45,6 @@
 /* ================================================================= */
 /* BASE STYLES                                                       */
 /* ================================================================= */
-* {
-  border-color: var(--color-slate-50);
-}
 
 html {
   @apply antialiased;
@@ -92,26 +89,6 @@ a {
 
   &:hover {
     color: var(--color-blue-700);
-  }
-}
-
-.nav-link {
-  color: var(--color-rsf-orange);
-  @apply transition-colors rounded-md px-3 py-2 text-sm font-medium;
-
-  &:hover {
-    color: var(--color-ob-1);
-    @apply bg-amber-100;
-  }
-}
-
-.nav-home-link {
-  color: var(--color-rsf-orange);
-  @apply transition-colors text-xl font-extrabold tracking-tight;
-
-  &:hover {
-    color: var(--color-ob-1);
-    @apply bg-amber-100;
   }
 }
 
@@ -249,9 +226,28 @@ a {
 }
 
 .tile-orange {
-  background-color: var(--color-rsf-yellow);
   color: white;
-  @apply rounded-xl p-6;
+  @apply bg-rsf-orange/85 rounded-xl p-6;
+  transition: all 0.2s;
+
+  &:hover {
+    @apply shadow-lg/20;
+  }
+}
+
+.tile-light-orange {
+  color: white;
+  @apply bg-rsf-orange/65 rounded-xl p-6;
+  transition: all 0.2s;
+
+  &:hover {
+    @apply shadow-lg/20;
+  }
+}
+
+.tile-dark-yellow {
+  color: var(--color-ob-1);
+  @apply bg-rsf-yellow/40 rounded-xl p-6;
   transition: all 0.2s;
 
   &:hover {

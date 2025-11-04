@@ -1,0 +1,25 @@
+@reference "tailwindcss";
+
+/* ================================================================= */
+/* NAVBAR STYLES                                                     */
+/* ================================================================= */
+
+.nav-link {
+  color: var(--color-rsf-orange);
+  @apply transition-colors rounded-md px-3 py-2 text-sm font-medium;
+
+  &:hover {
+    color: var(--color-ob-1);
+    @apply bg-amber-100;
+  }
+}
+
+.nav-home-link {
+  color: var(--color-rsf-orange);
+  @apply transition-colors text-xl font-extrabold tracking-tight;
+
+  &:hover {
+    color: var(--color-ob-1);
+    @apply bg-amber-100;
+  }
+}

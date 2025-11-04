@@ -24,23 +24,25 @@ export default function PortfolioSkills() {
 
   return (
     <section className="container-custom section-spacing">
-      <h2 className="mb-8">Skills</h2>
-      <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 gap-4">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="tile flex flex-col items-center justify-center p-3 hover:scale-105 transition-transform"
-          >
-            <Image
-              src={skill.img}
-              alt={`${skill.name} icon`}
-              width={48}
-              height={48}
-              className="mb-2 object-contain"
-            />
-            <p className="text-xs font-medium text-center">{skill.name}</p>
-          </div>
-        ))}
+      <div className="tile-dark-yellow">
+        <h2 className="mb-8">Skills</h2>
+        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 gap-4">
+          {skills.map((skill, index) => (
+            <div
+              key={index}
+              className="tile flex flex-col items-center justify-center p-3 hover:scale-105 transition-transform"
+            >
+              <Image
+                src={skill.img}
+                alt={`${skill.name} icon`}
+                width={48}
+                height={48}
+                className="mb-2 object-contain"
+              />
+              <p className="text-xs font-medium text-center">{skill.name}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
