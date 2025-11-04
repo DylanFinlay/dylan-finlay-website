@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-white text-neutral-800">
+      <body className="min-h-screen bg-white text-slate-800">
         <Navbar />
         <main className="section-spacing">{children}</main>
         <Footer />

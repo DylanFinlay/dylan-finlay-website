@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full border-b backdrop-blur-sm">
+    <nav className="sticky top-0 z-50 w-full border-b-2 backdrop-blur-sm">
       <div className="container-custom">
         <div className="flex h-16 items-center justify-between">
           {/* Logo/Name */}
