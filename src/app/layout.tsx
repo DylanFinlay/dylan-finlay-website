@@ -1,3 +1,4 @@
+import AOSInit from "@/components/AOSInit";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-white text-slate-800">
+        <AOSInit />
         <Navbar />
         <main className="section-spacing">{children}</main>
         <Footer />

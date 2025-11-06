@@ -39,11 +39,16 @@ export default function PortfolioExperience() {
 
   return (
     <section className="container-custom section-spacing">
-      <div className="tile-light-orange">
+      <div className="tile-light-orange" data-aos="fade-up">
         <h2 className="mb-8">Professional Experience</h2>
         <div className="space-y-6">
           {professionalExperience.map((exp, index) => (
-            <div key={index} className="tile-light-blue">
+            <div
+              key={index}
+              className="tile-sand"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
                 <h4 className="text-xl font-semibold">{exp.title}</h4>
                 <span className="text-sm font-medium">{exp.period}</span>

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "aos/dist/aos.css";
 
 /* ================================================================= */
 /* COLOR VARIABLES - Change colors here only                         */
@@ -248,6 +249,16 @@ a {
 .tile-dark-yellow {
   color: var(--color-ob-1);
   @apply bg-rsf-yellow/40 rounded-xl p-6;
+  transition: all 0.2s;
+
+  &:hover {
+    @apply shadow-lg/20;
+  }
+}
+
+.tile-sand {
+  color: var(--color-ob-1);
+  @apply bg-med-sand/70 rounded-xl p-6;
   transition: all 0.2s;
 
   &:hover {
