@@ -1,9 +1,10 @@
+import AnimatedTile from "@/components/AnimatedTile";
 import Image from "next/image";
 
 export default function PortfolioAbout() {
   return (
     <section className="container-custom section-spacing">
-      <div className="tile-light-blue">
+      <AnimatedTile className="tile-light-blue">
         <div className="grid gap- md:grid-cols-2 items-center">
           <div className="space-y-4">
             <h2 className="mb-12">About Me</h2>
@@ -32,7 +33,7 @@ export default function PortfolioAbout() {
             />
           </div>
         </div>
-      </div>
+      </AnimatedTile>
     </section>
   );
 }

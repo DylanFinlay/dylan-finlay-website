@@ -1,3 +1,5 @@
+import AnimatedTile from "@/components/AnimatedTile";
+
 export default function PortfolioDesignTeam() {
   const designTeams = [
     {
@@ -18,21 +20,26 @@ export default function PortfolioDesignTeam() {
 
   return (
     <section className="container-custom section-spacing">
-      <div className="tile-dark-yellow">
+      <AnimatedTile className="tile-dark-yellow">
         <h2 className="mb-8">Design Team Experience</h2>
         <div className="space-y-6">
           {designTeams.map((exp, index) => (
-            <div key={index} className="tile-sand">
+            <AnimatedTile
+              key={index}
+              className="tile-sand"
+              animation="flip-left"
+              delay={index * 50}
+            >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
                 <h4 className="text-xl font-semibold">{exp.title}</h4>
                 <span className="text-sm font-medium">{exp.period}</span>
               </div>
               <p className="text-lg font-medium mb-3">{exp.company}</p>
               <p className="leading-relaxed">{exp.description}</p>
-            </div>
+            </AnimatedTile>
           ))}
         </div>
-      </div>
+      </AnimatedTile>
     </section>
   );
 }

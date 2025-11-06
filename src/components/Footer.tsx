@@ -1,3 +1,4 @@
+import AnimatedTile from "@/components/AnimatedTile";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
@@ -6,7 +7,7 @@ export default function Footer() {
     <footer className="w-full mt-2">
       <div className="container-custom section-spacing">
         <div className="border-t border-ob-3"></div>
-        <div className="mt-6 tile-orange text-center">
+        <AnimatedTile className="mt-6 tile-orange text-center">
           <h3 className="mb-4">Get in Touch</h3>
           <p className="mb-6">
             Feel free to reach out for opportunities, collaborations, or just to
@@ -39,7 +40,7 @@ export default function Footer() {
               Email
             </Link>
           </div>
-        </div>
+        </AnimatedTile>
         <div className="mt-8 text-center text-sm">
           © {new Date().getFullYear()} Dylan Finlay — A Personal Website
         </div>

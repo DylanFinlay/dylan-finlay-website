@@ -1,3 +1,4 @@
+import AnimatedTile from "@/components/AnimatedTile";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 
@@ -70,11 +71,11 @@ export default function PortfolioProjects() {
 
   return (
     <section className="container-custom section-spacing">
-      <div className="tile-light-blue">
+      <AnimatedTile className="tile-light-blue">
         <h2 className="mb-12">Projects</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <div
+            <AnimatedTile
               key={index}
               className="tile-light-blue group"
               style={{
@@ -115,10 +116,10 @@ export default function PortfolioProjects() {
                   )}
                 </div>
               </div>
-            </div>
+            </AnimatedTile>
           ))}
         </div>
-      </div>
+      </AnimatedTile>
     </section>
   );
 }

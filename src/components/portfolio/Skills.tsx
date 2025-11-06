@@ -1,3 +1,4 @@
+import AnimatedTile from "@/components/AnimatedTile";
 import Image from "next/image";
 
 export default function PortfolioSkills() {
@@ -24,7 +25,7 @@ export default function PortfolioSkills() {
 
   return (
     <section className="container-custom section-spacing">
-      <div className="tile-dark-yellow">
+      <AnimatedTile className="tile-dark-yellow">
         <h2 className="mb-8">Skills</h2>
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 gap-4">
           {skills.map((skill, index) => (
@@ -43,7 +44,7 @@ export default function PortfolioSkills() {
             </div>
           ))}
         </div>
-      </div>
+      </AnimatedTile>
     </section>
   );
 }
