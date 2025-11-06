@@ -1,7 +1,16 @@
+"use client";
+
 import AnimatedTile from "@/components/AnimatedTile";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 
 export default function PortfolioAbout() {
+  const scrollToExperience = () => {
+    document.getElementById("experience")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="container-custom section-spacing">
       <AnimatedTile className="tile-light-blue">
@@ -34,6 +43,17 @@ export default function PortfolioAbout() {
           </div>
         </div>
       </AnimatedTile>
+
+      {/* Scroll button */}
+      <div className="flex justify-center mt-8">
+        <button
+          onClick={scrollToExperience}
+          className="btn-primary rounded-full p-4 hover:scale-110 transition-transform"
+          aria-label="Scroll to experience section"
+        >
+          <ChevronDown size={24} />
+        </button>
+      </div>
     </section>
   );
 }

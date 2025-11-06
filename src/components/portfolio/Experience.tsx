@@ -40,7 +40,7 @@ export default function PortfolioExperience() {
   ];
 
   return (
-    <section className="container-custom section-spacing">
+    <section id="experience" className="container-custom section-spacing">
       <AnimatedTile className="tile-light-orange">
         <h2 className="mb-8">Professional Experience</h2>
         <div className="space-y-6">
