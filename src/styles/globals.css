@@ -303,4 +303,156 @@ a {
   transform-style: preserve-3d;
 }
 
+/* Floating Bubbles Animation */
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) translateX(20px);
+    opacity: 0;
+  }
+}
+
+.bubble-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--color-ob-7),
+    var(--color-ob-6)
+  );
+  opacity: 0;
+  animation: float-up linear infinite;
+}
+
+/* Only show bubbles outside the content area on large screens */
+/* Content is max 1200px + padding (48px on each side) = ~1296px total */
+/* Add buffer zone, so only show bubbles on screens 1400px+ */
+@media (min-width: 1400px) {
+  .bubble {
+    display: block;
+  }
+
+  /* Left side bubbles - positioned in margin before content */
+  .bubble-1 {
+    left: calc((100vw - 1200px) / 4);
+    width: 40px;
+    height: 40px;
+    animation-duration: 15s;
+    animation-delay: 0s;
+  }
+
+  .bubble-2 {
+    left: calc((100vw - 1200px) / 5);
+    width: 25px;
+    height: 25px;
+    animation-duration: 12s;
+    animation-delay: 3s;
+  }
+
+  .bubble-3 {
+    left: calc((100vw - 1200px) / 6);
+    width: 35px;
+    height: 35px;
+    animation-duration: 18s;
+    animation-delay: 6s;
+  }
+
+  /* Right side bubbles - positioned in margin after content */
+  .bubble-4 {
+    right: calc((100vw - 1200px) / 4);
+    width: 45px;
+    height: 45px;
+    animation-duration: 14s;
+    animation-delay: 2s;
+  }
+
+  .bubble-5 {
+    right: calc((100vw - 1200px) / 5);
+    width: 30px;
+    height: 30px;
+    animation-duration: 16s;
+    animation-delay: 5s;
+  }
+
+  .bubble-6 {
+    right: calc((100vw - 1200px) / 6);
+    width: 28px;
+    height: 28px;
+    animation-duration: 13s;
+    animation-delay: 8s;
+  }
+}
+
+@media (max-width: 1399px) {
+  .bubble {
+    display: none;
+  }
+}
+
+/* Pulsing Sun Icon */
+@keyframes sun-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+    box-shadow: 0 0 10px var(--color-rsf-yellow),
+      0 0 20px var(--color-rsf-orange);
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 15px var(--color-rsf-yellow),
+      0 0 30px var(--color-rsf-orange);
+  }
+}
+
+.pulsing-sun-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    var(--color-rsf-yellow),
+    var(--color-rsf-orange)
+  );
+  animation: sun-pulse 3s ease-in-out infinite;
+  position: relative;
+}
+
+.pulsing-sun-icon::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    transparent 40%,
+    var(--color-rsf-yellow) 70%,
+    transparent 80%
+  );
+  opacity: 0.4;
+  animation: sun-pulse 3s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
 /* ================================================================= */

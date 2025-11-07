@@ -5,10 +5,14 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 w-full backdrop-blur-sm">
       <div className="container-custom">
         <div className="flex h-16 items-center border-b border-ob-3 justify-between">
-          {/* Logo/Name */}
-          <Link href="/" className="nav-home-link">
-            Dylan Finlay
-          </Link>
+          {/* Logo/Name with Sun Icon */}
+          <div className="flex items-center gap-3">
+            {/* Pulsing Sun - only on md+ screens */}
+            <div className="hidden md:block pulsing-sun-icon"></div>
+            <Link href="/" className="nav-home-link">
+              Dylan Finlay
+            </Link>
+          </div>
 
           {/* Navigation Links */}
           <div className="flex items-center gap-1">
