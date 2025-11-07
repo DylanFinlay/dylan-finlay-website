@@ -24,12 +24,13 @@
   --color-med-turquoise: #57a99a;
   --color-med-navy: #1c3d5a;
 
-  /* Dark Blue and Yellow Palette */
-  --color-dby-blue-1: #00296b;
-  --color-dby-blue-2: #003f88;
-  --color-dby-blue-3: #00509d;
-  --color-dby-yellow-1: #fdc500;
-  --color-dby-yellow-2: #ffd500;
+  /* More Sand Colors */
+  --color-sand-1: #fdf5e6;
+  --color-sand-2: #f2d0a9;
+  --color-sand-3: #eec88f;
+  --color-sand-4: #e1bc6d;
+  --color-sand-5: #ccada3;
+  --color-ocean-blue: #8eb7bc;
 
   /* Ocean Blue Palette */
   --color-ob-1: #03045e;
@@ -41,6 +42,13 @@
   --color-ob-7: #90e0ef;
   --color-ob-8: #ade8f4;
   --color-ob-9: #caf0f8;
+
+  /* Dark Blue and Yellow Palette */
+  --color-dby-blue-1: #00296b;
+  --color-dby-blue-2: #003f88;
+  --color-dby-blue-3: #00509d;
+  --color-dby-yellow-1: #fdc500;
+  --color-dby-yellow-2: #ffd500;
 }
 
 /* ================================================================= */
@@ -53,7 +61,7 @@ html {
 }
 
 body {
-  background-color: var(--color-med-sand);
+  @apply bg-sand-2/55;
   color: var(--color-slate-800);
 }
 
@@ -191,7 +199,6 @@ a {
 /* ================================================================= */
 .tile-light-blue-clickable {
   background-color: var(--color-ob-6);
-  border: 1px solid var(--color-slate-100);
   @apply rounded-xl p-6;
   transition: all 0.2s;
 
@@ -212,7 +219,6 @@ a {
 
 .tile-light-blue {
   background-color: var(--color-ob-5);
-  border: 1px solid var(--color-slate-100);
   @apply rounded-xl p-6;
   transition: all 0.2s;
 
@@ -231,6 +237,10 @@ a {
   color: var(--color-ob-1);
   @apply bg-rsf-orange/85 rounded-xl p-6;
   transition: all 0.2s;
+
+  p {
+    color: var(--color-slate-900);
+  }
 
   &:hover {
     @apply shadow-lg/20;
@@ -264,6 +274,10 @@ a {
 
   p {
     color: var(--color-slate-900);
+  }
+
+  h5 {
+    color: var(--color-ob-2);
   }
 
   &:hover {

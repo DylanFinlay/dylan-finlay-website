@@ -24,7 +24,9 @@ export default function PortfolioDesignTeam() {
   return (
     <section className="container-custom section-spacing">
       <AnimatedTile className="tile-dark-yellow">
-        <h2 className="mb-8">Design Team Experience</h2>
+        <h2 className="mb-8 border-b-4 border-ob-6 inline-block">
+          Design Team Experience
+        </h2>
         <div className="space-y-6">
           {designTeams.map((exp, index) => (
             <AnimatedTile

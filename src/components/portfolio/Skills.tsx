@@ -26,7 +26,7 @@ export default function PortfolioSkills() {
   return (
     <section className="container-custom section-spacing">
       <AnimatedTile className="tile-dark-yellow">
-        <h2 className="mb-8">Skills</h2>
+        <h2 className="mb-8 border-b-4 border-ob-6 inline-block">Skills</h2>
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 gap-4">
           {skills.map((skill, index) => (
             <div

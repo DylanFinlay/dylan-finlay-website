@@ -72,7 +72,9 @@ export default function PortfolioProjects() {
   return (
     <section className="container-custom section-spacing">
       <AnimatedTile className="tile-light-blue">
-        <h2 className="mb-12">Projects</h2>
+        <h2 className="mb-12 border-b-4 border-rsf-orange inline-block">
+          Projects
+        </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <AnimatedTile

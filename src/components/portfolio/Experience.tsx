@@ -42,7 +42,9 @@ export default function PortfolioExperience() {
   return (
     <section id="experience" className="container-custom section-spacing">
       <AnimatedTile className="tile-light-orange">
-        <h2 className="mb-8">Professional Experience</h2>
+        <h2 className="mb-8 border-b-4 border-ob-4 inline-block">
+          Professional Experience
+        </h2>
         <div className="space-y-6">
           {professionalExperience.map((exp, index) => (
             <AnimatedTile

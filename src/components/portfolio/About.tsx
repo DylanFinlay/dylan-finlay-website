@@ -16,7 +16,9 @@ export default function PortfolioAbout() {
       <AnimatedTile className="tile-light-blue">
         <div className="grid gap- md:grid-cols-2 items-center">
           <div className="space-y-4">
-            <h2 className="mb-12">About Me</h2>
+            <h2 className="mb-10 border-b-4 border-rsf-orange inline-block">
+              About Me
+            </h2>
             <p className="text-lg leading-relaxed">
               Hi, I&apos;m Dylan—a Mechatronics Engineering student at the
               University of Waterloo. I&apos;m passionate about building
