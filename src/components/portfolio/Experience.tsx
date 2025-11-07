@@ -2,6 +2,7 @@
 
 import AnimatedTile from "@/components/AnimatedTile";
 import { Minus, Plus } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function PortfolioExperience() {
@@ -17,6 +18,7 @@ export default function PortfolioExperience() {
       period: "Jan 2026 - Apr 2026",
       description:
         "I am excited to soon be joining the DLR team in Stuttgart, Germany, where I will be working on a python-based simulation framework for hydrogen and electric powered trains.",
+      logo: "/assets/portfolio/dlr-logo.png",
     },
     {
       title: "Software Engineer Intern",
@@ -24,6 +26,7 @@ export default function PortfolioExperience() {
       period: "May 2025 - Aug 2025",
       description:
         "Worked on Ford Pro's Order Management team, where I helped build and maintain fulfillment services across the stack. I focused on developing a Java Spring API for syncing legacy orders, modernizing microservices, and improving CI/CD pipelines with Tekton in GCP.",
+      logo: "/assets/portfolio/Ford_Pro_Logo.png",
     },
     {
       title: "Software Developer Intern",
@@ -31,6 +34,7 @@ export default function PortfolioExperience() {
       period: "Sept 2024 - Dec 2024",
       description:
         "Worked on Solace's Micro-Integrations (MI) team, where I worked on test automation and development. I focused on developing the E2E Java test suite for the newest Cloud Integrations, along with improving the Python tooling for automation through Github Actions.",
+      logo: "/assets/portfolio/Solace-Logo.png",
     },
     {
       title: "Software Developer Intern",
@@ -38,6 +42,7 @@ export default function PortfolioExperience() {
       period: "Jan 2024 - Apr 2024",
       description:
         "Focused on enhancing back-end infrastructure for testing tools, particularly supporting Solace's EDA messaging solution. Leveraging my proficiency in Python, C, and bash scripting, I contributed to optimizing efficiency and functionality during my term.",
+      logo: "/assets/portfolio/Solace-Logo.png",
     },
     {
       title: "Software Engineer Intern",
@@ -45,6 +50,7 @@ export default function PortfolioExperience() {
       period: "May 2023 - Aug 2023",
       description:
         "Designed, implemented and deployed the REST API for a robust python web scraper empowering developers to effortlessly extract open graph tags from diverse websites.",
+      logo: "/assets/portfolio/shyftlabs_logo.png",
     },
   ];
 
@@ -72,15 +78,33 @@ export default function PortfolioExperience() {
                     delay={index * 50}
                   >
                     <div onClick={() => toggleExpand(index)}>
-                      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
-                        <h4 className="text-xl font-semibold">{exp.title}</h4>
-                        <span className="text-sm font-medium whitespace-nowrap md:ml-4">
-                          {exp.period}
-                        </span>
+                      <div className="flex gap-4">
+                        {/* Company Logo */}
+                        <div className="flex-shrink-0">
+                          <Image
+                            src={exp.logo}
+                            alt={`${exp.company} logo`}
+                            width={60}
+                            height={60}
+                            className="object-contain"
+                          />
+                        </div>
+
+                        {/* Content */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
+                            <h4 className="text-xl font-semibold">
+                              {exp.title}
+                            </h4>
+                            <span className="text-sm font-medium whitespace-nowrap md:ml-4">
+                              {exp.period}
+                            </span>
+                          </div>
+                          <h5 className="text-lg font-medium mb-1">
+                            {exp.company}
+                          </h5>
+                        </div>
                       </div>
-                      <h5 className="text-lg font-medium mb-1">
-                        {exp.company}
-                      </h5>
 
                       {isExpanded && (
                         <p className="leading-relaxed mt-3">
