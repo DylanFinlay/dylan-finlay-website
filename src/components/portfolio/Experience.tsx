@@ -1,6 +1,15 @@
+"use client";
+
 import AnimatedTile from "@/components/AnimatedTile";
+import { Minus, Plus } from "lucide-react";
+import { useState } from "react";
 
 export default function PortfolioExperience() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const toggleExpand = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
   const professionalExperience = [
     {
       title: "Incoming Software Engineer Intern",
@@ -45,22 +54,49 @@ export default function PortfolioExperience() {
         <h2 className="mb-8 border-b-4 border-ob-4 inline-block">
           Professional Experience
         </h2>
-        <div className="space-y-6">
-          {professionalExperience.map((exp, index) => (
-            <AnimatedTile
-              key={index}
-              className="tile-sand"
-              animation="flip-right"
-              delay={index * 50}
-            >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
-                <h4 className="text-xl font-semibold">{exp.title}</h4>
-                <span className="text-sm font-medium">{exp.period}</span>
-              </div>
-              <h5 className="text-lg font-medium mb-1">{exp.company}</h5>
-              <p className="leading-relaxed">{exp.description}</p>
-            </AnimatedTile>
-          ))}
+        <div className="relative">
+          {/* Timeline line - only visible on md+ screens, starts at first dot and ends at last dot */}
+          <div className="hidden md:block absolute left-8 top-12 bottom-12 w-0.5 bg-ob-3"></div>
+
+          <div className="space-y-6">
+            {professionalExperience.map((exp, index) => {
+              const isExpanded = expandedIndex === index;
+              return (
+                <div key={index} className="relative md:pl-20">
+                  {/* Timeline dot - centered vertically with the tile content */}
+                  <div className="hidden md:block absolute left-6 top-12 w-5 h-5 rounded-full bg-ob-3 border-4 border-med-sand"></div>
+
+                  <AnimatedTile
+                    className="tile-sand relative cursor-pointer"
+                    animation="fade-left"
+                    delay={index * 50}
+                  >
+                    <div onClick={() => toggleExpand(index)}>
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
+                        <h4 className="text-xl font-semibold">{exp.title}</h4>
+                        <span className="text-sm font-medium whitespace-nowrap md:ml-4">
+                          {exp.period}
+                        </span>
+                      </div>
+                      <h5 className="text-lg font-medium mb-1">
+                        {exp.company}
+                      </h5>
+
+                      {isExpanded && (
+                        <p className="leading-relaxed mt-3">
+                          {exp.description}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="absolute bottom-4 right-4 p-2 rounded-full bg-ob-3 text-white pointer-events-none">
+                      {isExpanded ? <Minus size={20} /> : <Plus size={20} />}
+                    </div>
+                  </AnimatedTile>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </AnimatedTile>
     </section>
