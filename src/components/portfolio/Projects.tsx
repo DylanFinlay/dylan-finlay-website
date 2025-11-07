@@ -1,8 +1,12 @@
+"use client";
+
 import AnimatedTile from "@/components/AnimatedTile";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function PortfolioProjects() {
+  const [activeProject, setActiveProject] = useState<number | null>(null);
   const projects = [
     {
       title: "Docs Dynamic Chatbot",
@@ -76,50 +80,67 @@ export default function PortfolioProjects() {
           Projects
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <AnimatedTile
-              key={index}
-              className="tile-light-blue group"
-              style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${project.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                minHeight: "280px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-end",
-              }}
-            >
-              <div className="bg-white/95 backdrop-blur-sm p-4 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-sm mb-4">{project.description}</p>
-                <div className="flex gap-2">
-                  {project.github && (
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-secondary text-sm py-2 px-4 inline-flex items-center gap-2"
-                    >
-                      <Github size={16} />
-                      Code
-                    </Link>
-                  )}
-                  {project.demo && (
-                    <Link
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary text-sm py-2 px-4 inline-flex items-center gap-2"
-                    >
-                      <ExternalLink size={16} />
-                      Demo
-                    </Link>
-                  )}
+          {projects.map((project, index) => {
+            const isActive = activeProject === index;
+            return (
+              <AnimatedTile
+                key={index}
+                className="tile-light-blue group overflow-hidden cursor-pointer"
+                style={{
+                  backgroundImage: `url(${project.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  minHeight: "280px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-end",
+                }}
+              >
+                {/* Clickable overlay for mobile */}
+                <div
+                  className="absolute inset-0 md:hidden"
+                  onClick={() => setActiveProject(isActive ? null : index)}
+                ></div>
+
+                <div
+                  className={`bg-white/95 backdrop-blur-sm p-4 rounded-lg transition-transform duration-300 ease-out ${
+                    isActive
+                      ? "translate-y-0"
+                      : "translate-y-full md:group-hover:translate-y-0"
+                  }`}
+                >
+                  <h3 className="text-xl font-semibold mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm mb-4">{project.description}</p>
+                  <div className="flex gap-2 relative z-10">
+                    {project.github && (
+                      <Link
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-secondary text-sm py-2 px-4 inline-flex items-center gap-2"
+                      >
+                        <Github size={16} />
+                        Code
+                      </Link>
+                    )}
+                    {project.demo && (
+                      <Link
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary text-sm py-2 px-4 inline-flex items-center gap-2"
+                      >
+                        <ExternalLink size={16} />
+                        Demo
+                      </Link>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </AnimatedTile>
-          ))}
+              </AnimatedTile>
+            );
+          })}
         </div>
       </AnimatedTile>
     </section>
