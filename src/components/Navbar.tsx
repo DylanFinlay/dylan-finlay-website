@@ -15,14 +15,14 @@ export default function Navbar() {
             <Link href="/portfolio" className="nav-link">
               Portfolio
             </Link>
-            <Link href="/projects" className="nav-link">
-              Projects
+            <Link href="/photography" className="nav-link">
+              Photography
             </Link>
             <Link href="/blog" className="nav-link">
               Blog
             </Link>
-            <Link href="/gear" className="nav-link">
-              Gear
+            <Link href="/extra" className="nav-link">
+              Extra
             </Link>
           </div>
         </div>

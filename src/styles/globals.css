@@ -286,3 +286,21 @@ a {
 }
 
 /* ================================================================= */
+/* ANIMATIONS                                                        */
+/* ================================================================= */
+
+@keyframes spin-3d {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-3d 8s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* ================================================================= */
