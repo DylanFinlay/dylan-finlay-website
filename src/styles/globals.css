@@ -152,9 +152,9 @@ a {
   transition: all 0.2s;
 
   &:hover {
-    background-color: var(--color-ob-4);
+    background-color: var(--color-ob-1);
     color: white;
-    @apply shadow-md;
+    @apply shadow-lg;
   }
 }
 
@@ -226,8 +226,9 @@ a {
   }
 }
 
+/* ORANGE TILE - CURRENTLY USED FOR NAVBAR */
 .tile-orange {
-  color: white;
+  color: var(--color-ob-1);
   @apply bg-rsf-orange/85 rounded-xl p-6;
   transition: all 0.2s;
 
@@ -260,6 +261,10 @@ a {
   color: var(--color-ob-1);
   @apply bg-med-sand/70 rounded-xl p-6;
   transition: all 0.2s;
+
+  p {
+    color: var(--color-slate-900);
+  }
 
   &:hover {
     @apply shadow-lg/20;

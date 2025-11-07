@@ -55,7 +55,7 @@ export default function PortfolioExperience() {
                 <h4 className="text-xl font-semibold">{exp.title}</h4>
                 <span className="text-sm font-medium">{exp.period}</span>
               </div>
-              <p className="text-lg font-medium mb-3">{exp.company}</p>
+              <h5 className="text-lg font-medium mb-1">{exp.company}</h5>
               <p className="leading-relaxed">{exp.description}</p>
             </AnimatedTile>
           ))}

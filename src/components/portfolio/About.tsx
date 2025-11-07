@@ -32,7 +32,7 @@ export default function PortfolioAbout() {
               games.
             </p>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center pt-6 md:pt-0">
             <Image
               src="/assets/portfolio/dettifoss-selfie.jpg"
               alt="Dylan Finlay"

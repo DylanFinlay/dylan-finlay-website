@@ -27,7 +27,7 @@ export default function Footer() {
               href="https://github.com/DylanFinlay"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary inline-flex items-center gap-2"
+              className="btn-outline inline-flex items-center gap-2"
             >
               <Github size={20} />
               GitHub
