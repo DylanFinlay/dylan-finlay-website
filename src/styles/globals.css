@@ -433,7 +433,7 @@ a {
   background: radial-gradient(
     circle at center,
     var(--color-rsf-yellow),
-    var(--color-rsf-orange)
+    var(--color-med-orange)
   );
   animation: sun-pulse 3s ease-in-out infinite;
   position: relative;

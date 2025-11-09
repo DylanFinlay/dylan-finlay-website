@@ -14,7 +14,7 @@ export default function BlogPage() {
   return (
     <section className="container-custom">
       <div className="mb-12">
-        <h1 className="mb-3">Blog</h1>
+        <h1 className="mb-3">Blog - Coming Soon</h1>
         <p className="text-lg">
           Thoughts on photography, development, and travel.
         </p>

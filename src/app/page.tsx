@@ -4,6 +4,16 @@ import Link from "next/link";
 export default function Home() {
   return (
     <section className="container-custom">
+      {/* Under Construction Notice */}
+      <div className="mb-8 p-4 bg-rsf-yellow/20 border-l-4 border-rsf-orange rounded-lg">
+        <p className="text-sm font-medium text-slate-700">
+          🚧 <strong>Note:</strong> This website is a new project that is
+          currently still under construction. My trustee pal, CoPilot, and I are
+          working hard on this new development. I felt that my old site was a
+          little bit too boring for me. Stay tuned for updates!
+        </p>
+      </div>
+
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row items-center gap-12 mb-16">
         {/* Spinning Logo */}
