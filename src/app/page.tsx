@@ -12,6 +12,16 @@ export default function Home() {
           working hard on this new development. I felt that my old site was a
           little bit too boring for me. Stay tuned for updates!
         </p>
+        <p className="text-sm font-medium text-slate-700 mt-2">
+          My old portfolio can still be accessed at{" "}
+          <Link
+            href="/legacyportfolio"
+            className="text-rsf-orange hover:text-ob-1 underline"
+          >
+            dylanfinlay.com/legacyportfolio
+          </Link>
+          .
+        </p>
       </div>
 
       {/* Hero Section */}
