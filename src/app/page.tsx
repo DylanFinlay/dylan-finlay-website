@@ -30,7 +30,7 @@ export default function Home() {
         <div className="shrink-0">
           <div className="animate-spin-slow">
             <Image
-              src="/Blue_DF_Trans.png"
+              src="/assets/icons/Blue_DF_Trans.png"
               alt="Dylan Finlay Logo"
               width={200}
               height={200}
