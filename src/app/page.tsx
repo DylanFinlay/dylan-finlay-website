@@ -25,9 +25,9 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <div className="flex flex-col md:flex-row items-center gap-12 mb-16">
+      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-16">
         {/* Spinning Logo */}
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <div className="animate-spin-slow">
             <Image
               src="/Blue_DF_Trans.png"
@@ -51,6 +51,17 @@ export default function Home() {
           <p className="text-lg leading-relaxed">
             Explore my work, thoughts, and creative projects below.
           </p>
+        </div>
+
+        {/* Headshot */}
+        <div className="shrink-0 hidden lg:block">
+          <Image
+            src="/assets/home/2025HeadShot.JPG"
+            alt="Dylan Finlay"
+            width={220}
+            height={220}
+            className="rounded-full object-cover shadow-lg w-[220px] h-[220px]"
+          />
         </div>
       </div>
 

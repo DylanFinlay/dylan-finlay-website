@@ -6,13 +6,11 @@ export default function Navbar() {
       <div className="container-custom">
         <div className="flex h-16 items-center border-b border-ob-3 justify-between">
           {/* Logo/Name with Sun Icon */}
-          <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3 nav-home-link">
             {/* Pulsing Sun - only on md+ screens */}
             <div className="hidden md:block pulsing-sun-icon"></div>
-            <Link href="/" className="nav-home-link">
-              Dylan Finlay
-            </Link>
-          </div>
+            <span>Dylan Finlay</span>
+          </Link>
 
           {/* Navigation Links */}
           <div className="flex items-center gap-1">
