@@ -13,11 +13,19 @@ export default function PortfolioExperience() {
   };
   const professionalExperience = [
     {
-      title: "Incoming Software Engineer Intern",
+      title: "Software Developer Intern",
+      company: "Solace",
+      period: "May 2026 - Aug 2026",
+      description:
+        "Excited to be working on Solace's Micro-Integrations team again this Summer!",
+      logo: "/assets/portfolio/Solace-Logo.png",
+    },
+    {
+      title: "Software Engineer Intern",
       company: "German Aerospace Center (DLR)",
       period: "Jan 2026 - Apr 2026",
       description:
-        "I am excited to soon be joining the DLR team in Stuttgart, Germany, where I will be working on a python-based simulation framework for hydrogen and electric powered trains.",
+        "Contributed to the development of a python-based simulation framework, modelling the power and energy usage of HVAC systems onboard hydrogen and electric powered trains. Key achievements include reducing the simulation runtime by nearly 70%, and developing an automated framework to test the model against real-world data from an industry partner.",
       logo: "/assets/portfolio/dlr-logo.png",
     },
     {

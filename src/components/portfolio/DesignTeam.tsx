@@ -6,9 +6,9 @@ export default function PortfolioDesignTeam() {
     {
       title: "Co-Founder & Software Team Lead",
       company: "UW RoboSoccer",
-      period: "Aug 2024 - present",
+      period: "Aug 2024 - Sept 2025",
       description:
-        "Co-Founder of Waterloo's newest SDC design team. Our group aims to compete in the global RoboCup competition, where we will present a group of humanoid robots to autonomously compete in 4v4 soccer matches. The Software/ML/AI Team is responsible for developing the algorithms that drive our humanoid robots. This includes computer vision for recognizing the ball and opponents, decision-making algorithms for strategic play, and machine learning models to improve robot performance over time.",
+        "Co-Founder of one of Waterloo's newest SDC design teams. Our group aims to compete in the global RoboCup competition, where we will present a group of humanoid robots to autonomously compete in 4v4 soccer matches. The Software/ML/AI Team is responsible for developing the algorithms that drive our humanoid robots. This includes computer vision for recognizing the ball and opponents, decision-making algorithms for strategic play, and machine learning models to improve robot performance over time.",
       image: "/assets/portfolio/robocup_robot.png",
     },
     {
