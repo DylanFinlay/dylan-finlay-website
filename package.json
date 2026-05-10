@@ -6,7 +6,12 @@
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "optimize-photos": "node scripts/optimize-photos.js all",
+    "optimize-photos:album": "node scripts/optimize-photos.js",
+    "watch-optimize": "node scripts/watch-optimize.js",
+    "cleanup-derivatives": "node scripts/cleanup-derivatives.js",
+    "cleanup-derivatives:dry-run": "node scripts/cleanup-derivatives.js --dry-run"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.1",
@@ -29,8 +34,11 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "baseline-browser-mapping": "^2.10.29",
+    "chokidar": "^3.5.3",
     "eslint": "^9",
     "eslint-config-next": "16.1.0",
+    "sharp": "^0.32.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
