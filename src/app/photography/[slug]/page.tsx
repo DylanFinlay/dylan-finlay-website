@@ -3,8 +3,8 @@ import { getAlbumPhotos, getAlbums, humanizeSlug } from "@/lib/photography";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-// Force dynamic rendering so new folders added during dev are immediately available
-export const dynamic = "force-dynamic";
+// Pre-render album pages at build time so the route stays static on Vercel.
+export const dynamicParams = false;
 
 type Props = {
   params: Promise<{ slug: string }>;
