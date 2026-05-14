@@ -4,26 +4,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <section className="container-custom">
-      {/* Under Construction Notice */}
-      <div className="mb-8 p-4 bg-rsf-yellow/20 border-l-4 border-rsf-orange rounded-lg">
-        <p className="text-sm font-medium text-slate-700">
-          🚧 <strong>Note:</strong> This website is a new project that is
-          currently still under construction. My trustee pal, CoPilot, and I are
-          working hard on this new development. I felt that my old site was a
-          little bit too boring for me. Stay tuned for updates!
-        </p>
-        <p className="text-sm font-medium text-slate-700 mt-2">
-          My old portfolio can still be accessed at{" "}
-          <Link
-            href="/legacyportfolio"
-            className="text-rsf-orange hover:text-ob-1 underline"
-          >
-            dylanfinlay.com/legacyportfolio
-          </Link>
-          .
-        </p>
-      </div>
-
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-16">
         {/* Spinning Logo */}
@@ -82,7 +62,7 @@ export default function Home() {
           <h2 className="mb-2 text-2xl group-hover:text-blue-600">
             Photography
           </h2>
-          <p>Photo gallery, gear reviews, and visual stories.</p>
+          <p>Photo albums from my adventures and travels.</p>
         </Link>
 
         <Link href="/blog" className="tile-light-blue-clickable group block">
