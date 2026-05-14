@@ -165,7 +165,7 @@ export default function PhotoGrid({ photos }: Props) {
         >
           <button
             onClick={close}
-            className="absolute top-6 right-6 text-white bg-slate-800/70 rounded-full p-3 text-2xl shadow-lg"
+            className="absolute top-6 right-6 text-white bg-slate-800/70 rounded-full p-3 text-2xl shadow-lg z-[60] transition-colors active:bg-slate-700/90 active:scale-95"
             aria-label="Close"
           >
             ×
@@ -173,13 +173,13 @@ export default function PhotoGrid({ photos }: Props) {
 
           <button
             onClick={prev}
-            className="absolute left-6 text-white bg-slate-800/70 rounded-full p-3 text-3xl shadow-lg"
+            className="absolute left-6 text-white bg-slate-800/70 rounded-full p-3 text-3xl shadow-lg z-[60] transition-colors active:bg-slate-700/90 active:scale-95"
             aria-label="Previous"
           >
             ‹
           </button>
 
-          <div className="relative w-[90vw] h-[90vh]">
+          <div className="relative w-[90vw] h-[90vh] z-40">
             {typeof photos[openIndex] === "string" ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
@@ -210,7 +210,7 @@ export default function PhotoGrid({ photos }: Props) {
 
           <button
             onClick={next}
-            className="absolute right-6 text-white bg-slate-800/70 rounded-full p-3 text-3xl shadow-lg"
+            className="absolute right-6 text-white bg-slate-800/70 rounded-full p-3 text-3xl shadow-lg z-[60] transition-colors active:bg-slate-700/90 active:scale-95"
             aria-label="Next"
           >
             ›
