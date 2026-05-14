@@ -8,6 +8,10 @@ const nextConfig = {
   reactStrictMode: true,
   reactCompiler: true,
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  outputFileTracingExcludes: {
+    "/photography": ["./public/assets/gallery/**/*"],
+    "/photography/[slug]": ["./public/assets/gallery/**/*"],
+  },
 };
 
 export default withMDX(nextConfig);
