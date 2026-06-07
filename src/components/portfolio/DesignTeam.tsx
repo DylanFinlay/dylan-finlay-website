@@ -53,6 +53,7 @@ export default function PortfolioDesignTeam() {
                     width={300}
                     height={300}
                     className="rounded-lg shadow-md object-cover"
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </div>
               </div>

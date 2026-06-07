@@ -39,6 +39,7 @@ export default function PortfolioSkills() {
                 width={48}
                 height={48}
                 className="mb-2 object-contain"
+                style={{ width: "auto", height: "auto" }}
               />
               <p className="text-xs font-medium text-center">{skill.name}</p>
             </div>

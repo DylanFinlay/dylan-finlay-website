@@ -41,6 +41,7 @@ export default function PortfolioAbout() {
               width={400}
               height={400}
               className="rounded-xl shadow-lg object-cover"
+              style={{ width: "auto", height: "auto" }}
             />
           </div>
         </div>
