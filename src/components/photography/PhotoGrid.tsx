@@ -147,6 +147,7 @@ export default function PhotoGrid({ photos }: Props) {
                     fill
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     style={{ objectFit: "cover" }}
+                    unoptimized
                     placeholder={p.blurDataURL ? "blur" : undefined}
                     blurDataURL={p.blurDataURL}
                   />
@@ -193,6 +194,7 @@ export default function PhotoGrid({ photos }: Props) {
                 alt={`Photo ${openIndex + 1}`}
                 fill
                 style={{ objectFit: "contain" }}
+                unoptimized
                 placeholder={
                   typeof photos[openIndex] === "object" &&
                   photos[openIndex].blurDataURL
