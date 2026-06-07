@@ -31,6 +31,40 @@ export function humanizeSlug(slug: string) {
   return withoutDate.replace(/[_\-]+/g, " ").trim() || slug;
 }
 
+function readAlbumManifest(albumDir: string) {
+  const manifestPath = path.join(albumDir, "manifest.json");
+  if (!fs.existsSync(manifestPath)) return null;
+
+  try {
+    const raw = fs.readFileSync(manifestPath, "utf8");
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : null;
+  } catch (e) {
+    console.error("Invalid manifest for album", albumDir, e);
+    return null;
+  }
+}
+
+function pickCoverUrl(slug: string, entry: any) {
+  if (!entry?.variants) return undefined;
+
+  const widths = Object.keys(entry.variants)
+    .map((w) => Number(w))
+    .filter(Boolean)
+    .sort((a, b) => a - b);
+
+  const preferredWidth =
+    widths.find((w) => w >= 768) ?? widths[widths.length - 1];
+  if (!preferredWidth) return undefined;
+
+  const variant = entry.variants[String(preferredWidth)];
+  return variant?.webp || variant?.jpg
+    ? variant.webp || variant.jpg
+    : entry.filename
+      ? `/assets/gallery/${slug}/derivatives/${path.parse(entry.filename).name}-${preferredWidth}.jpg`
+      : undefined;
+}
+
 export async function getAlbums(): Promise<Album[]> {
   if (!fs.existsSync(GALLERY_PATH)) return [];
 
@@ -39,17 +73,23 @@ export async function getAlbums(): Promise<Album[]> {
 
   const albums: Album[] = dirs.map((slug) => {
     const dir = path.join(GALLERY_PATH, slug);
-    const files = fs
+    const manifest = readAlbumManifest(dir);
+    const rootFiles = fs
       .readdirSync(dir)
       .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f));
-    files.sort();
-    const cover = files.length ? files[0] : undefined;
+    rootFiles.sort();
+    const coverEntry = manifest?.[0];
+    const cover = coverEntry?.filename || rootFiles[0];
     return {
       slug,
       title: humanizeSlug(slug),
       cover,
-      coverUrl: cover ? `/assets/gallery/${slug}/${cover}` : undefined,
-      count: files.length,
+      coverUrl: coverEntry
+        ? pickCoverUrl(slug, coverEntry)
+        : cover
+          ? `/assets/gallery/${slug}/${cover}`
+          : undefined,
+      count: manifest?.length ?? rootFiles.length,
     };
   });
 
@@ -62,23 +102,15 @@ export async function getAlbumPhotos(slug: string): Promise<Photo[]> {
   if (!slug) return [];
   const dir = path.join(GALLERY_PATH, String(slug));
   if (!fs.existsSync(dir)) return [];
-  const manifestPath = path.join(dir, "manifest.json");
 
-  if (fs.existsSync(manifestPath)) {
-    try {
-      const raw = fs.readFileSync(manifestPath, "utf8");
-      const parsed = JSON.parse(raw);
-      // parsed expected: [{ filename, variants: { width: { jpg, webp } } }, ...]
-      return parsed.map((item: any) => ({
-        filename: item.filename,
-        url: `/assets/gallery/${slug}/${item.filename}`,
-        variants: item.variants || undefined,
-        blurDataURL: item.blurDataURL || undefined,
-      }));
-    } catch (e) {
-      // fall through to reading files directly
-      console.error("Invalid manifest for album", slug, e);
-    }
+  const manifest = readAlbumManifest(dir);
+  if (manifest) {
+    return manifest.map((item: any) => ({
+      filename: item.filename,
+      url: `/assets/gallery/${slug}/${item.filename}`,
+      variants: item.variants || undefined,
+      blurDataURL: item.blurDataURL || undefined,
+    }));
   }
 
   const files = fs
