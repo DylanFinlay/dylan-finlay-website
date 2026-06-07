@@ -1,0 +1,11 @@
+# Ignore raw source photos in album folders.
+# Generated derivatives and manifests stay tracked.
+*/**/*.jpg
+*/**/*.jpeg
+*/**/*.png
+*/**/*.webp
+*/**/*.avif
+
+!*/manifest.json
+!*/derivatives/
+!*/derivatives/**
