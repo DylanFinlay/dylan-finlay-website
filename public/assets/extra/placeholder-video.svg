@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Video thumbnail placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fb8500"/>
+      <stop offset="100%" stop-color="#ffb703"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#g)"/>
+  <circle cx="320" cy="180" r="56" fill="#03045e" opacity="0.85"/>
+  <polygon points="300,150 300,210 352,180" fill="#caf0f8"/>
+  <text x="50%" y="92%" text-anchor="middle" fill="#03045e" font-family="system-ui, sans-serif" font-size="18" opacity="0.8">Video thumbnail</text>
+</svg>

@@ -1,0 +1,53 @@
+@reference "tailwindcss";
+
+/* ================================================================= */
+/* EXTRA PAGE                                                        */
+/* Scoped styles for /extra and /extra/[slug]. Reuses the shared     */
+/* tile-* classes from globals.css; this file only holds the few     */
+/* small, page-specific touches that don't belong globally.          */
+/* ================================================================= */
+
+/* Gentle pulsing for the Spotify now-playing album art. Kept here rather
+   than in globals.css because it's specific to this one widget. */
+@keyframes pulse-slow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.92;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Action button for the random generators. A smoother, halo-free click than
+   .btn-primary: no focus ring/offset (which produced a white border on
+   click), a slightly darker ocean-blue fill, and a soft press-down effect. */
+.extra-action-btn {
+  background-color: var(--color-ob-2);
+  color: white;
+  @apply rounded-lg font-medium;
+  @apply focus:outline-none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-ob-1);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

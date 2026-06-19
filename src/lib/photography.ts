@@ -122,3 +122,67 @@ export async function getAlbumPhotos(slug: string): Promise<Photo[]> {
     url: `/assets/gallery/${slug}/${filename}`,
   }));
 }
+
+/**
+ * A lightweight, serializable photo entry for client-side use (e.g. the
+ * Extra page random-photo widget). Drops the large base64 `blurDataURL`
+ * payload and exposes pre-resolved variant URLs so nothing heavy needs to
+ * cross the server/client boundary.
+ */
+export interface GalleryPhoto {
+  /** Human-friendly album title, for captions. */
+  albumTitle: string;
+  /** Album slug, used to link back to `/photography/{slug}`. */
+  albumSlug: string;
+  /** Original full-resolution URL. */
+  url: string;
+  /** Smallest available variant (≈320px) — ideal for thumbnails. */
+  thumbUrl: string;
+  /** Mid-size variant (≈1280px) for the main display. Falls back to url. */
+  displayUrl: string;
+}
+
+function pickVariantUrl(
+  slug: string,
+  entry: Photo,
+  target: number,
+): string | undefined {
+  if (!entry.variants) return undefined;
+  const widths = Object.keys(entry.variants)
+    .map((w) => Number(w))
+    .filter(Boolean)
+    .sort((a, b) => a - b);
+  if (widths.length === 0) return undefined;
+  const chosen =
+    widths.find((w) => w >= target) ?? widths[widths.length - 1];
+  const variant = entry.variants[String(chosen)];
+  return variant?.webp || variant?.jpg;
+}
+
+/**
+ * Flattens every photo across all albums into a single pool. Used by the
+ * Extra page random-photo widget.
+ */
+export async function getAllPhotos(): Promise<GalleryPhoto[]> {
+  const albums = await getAlbums();
+
+  const pool: GalleryPhoto[] = [];
+  for (const album of albums) {
+    const photos = await getAlbumPhotos(album.slug);
+    for (const photo of photos) {
+      // Use the cover-picker heuristic for the smallest viable display size.
+      const thumbUrl =
+        pickVariantUrl(album.slug, photo, 320) ?? photo.url;
+      const displayUrl =
+        pickVariantUrl(album.slug, photo, 1280) ?? photo.url;
+      pool.push({
+        albumTitle: album.title,
+        albumSlug: album.slug,
+        url: photo.url,
+        thumbUrl,
+        displayUrl,
+      });
+    }
+  }
+  return pool;
+}
