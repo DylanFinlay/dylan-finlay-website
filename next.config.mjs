@@ -11,6 +11,7 @@ const nextConfig = {
   outputFileTracingExcludes: {
     "/photography": ["./public/assets/gallery/**/*"],
     "/photography/[slug]": ["./public/assets/gallery/**/*"],
+    "/extra": ["./public/assets/gallery/**/*"],
   },
 };
 
