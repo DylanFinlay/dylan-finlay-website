@@ -18,7 +18,7 @@ export default function GamesSection() {
   return (
     <AnimatedTile className="tile-light-blue">
       <h2 className="mb-6 border-b-4 border-rsf-orange inline-block">
-        Games &amp; Experiments (NON-FUNCTIONAL PLACEHOLDERS RN)
+        Games &amp; Experiments
       </h2>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

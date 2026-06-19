@@ -51,7 +51,7 @@ export const ALBUMS: AlbumFav[] = [
     title: "Surf's Up (Music From the Motion Picture)",
     artist: "Various Artists",
     cover: "/assets/extra/surfs-up.jpg",
-    url: "https://open.spotify.com/search/Surf%27s%20Up%20soundtrack",
+    url: "https://open.spotify.com/search/Surf%27s%20Up%20Music%20From%20the%20Motion%20Picture",
   },
 ];
 

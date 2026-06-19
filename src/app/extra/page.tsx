@@ -28,7 +28,7 @@ export default async function ExtraPage() {
   return (
     <section className="container-custom">
       {/* Hero row — header + now-playing, side by side on laptop */}
-      <div className="grid gap-5 md:grid-cols-[1fr_minmax(0,24rem)] items-center mb-5">
+      <div className="grid gap-5 md:grid-cols-[1fr_minmax(0,24rem)] items-start mb-5">
         <ExtraHeader />
         <SpotifyWidget />
       </div>

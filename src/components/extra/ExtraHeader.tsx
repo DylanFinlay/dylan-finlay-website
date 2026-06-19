@@ -10,8 +10,9 @@ export default function ExtraHeader() {
     <div>
       <h1 className="mb-3 text-4xl md:text-5xl font-semibold">Extra</h1>
       <p className="text-lg text-slate-600">
-        The grab-bag page — interactive widgets, favourite media, and little
-        experiments. Whatever I feel like building lives here.
+        My everything else — a page of random stuff that I want on here,
+        including games, experiments, favourite albums/videos, and more! It’s a
+        growing collection of miscellaneous things.
       </p>
     </div>
   );

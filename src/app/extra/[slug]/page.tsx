@@ -1,4 +1,3 @@
-import GamePlaceholder from "@/components/extra/GamePlaceholder";
 import { getExtraGame, getExtraGames } from "@/lib/extra";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -23,9 +22,8 @@ export default async function GamePage({ params }: Props) {
     notFound();
   }
 
-  // Dynamically render the game component when wired up; otherwise show the
-  // placeholder so a registered-but-unbuilt game still resolves cleanly.
-  const gameModule = game.component ? await game.component() : null;
+  // Dynamically import and render the game component.
+  const { default: GameComponent } = await game.component!();
 
   return (
     <section className="container-custom">
@@ -54,11 +52,7 @@ export default async function GamePage({ params }: Props) {
         </h1>
       </div>
 
-      {gameModule ? (
-        <gameModule.default />
-      ) : (
-        <GamePlaceholder title={game.title} />
-      )}
+      <GameComponent />
     </section>
   );
 }

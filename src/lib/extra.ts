@@ -23,15 +23,10 @@ export interface ExtraGame {
 
 export const GAMES: ExtraGame[] = [
   {
-    slug: "color-quiz",
-    title: "Color Quiz",
-    description:
-      "A playful color-matching game that tests how well you know your hues.",
-  },
-  {
-    slug: "pixel-painter",
-    title: "Pixel Painter",
-    description: "Doodle tiny pixel-art masterpieces right in the browser.",
+    slug: "dino-runner",
+    title: "Dino Runner",
+    description: "Jump over obstacles and see how far you can go!",
+    component: () => import("@/components/extra/games/DinoRunner"),
   },
 ];
 
