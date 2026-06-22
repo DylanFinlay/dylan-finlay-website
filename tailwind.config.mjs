@@ -11,7 +11,6 @@ const config = {
     extend: {
       maxWidth: {
         container: "1200px",
-        prose: "75ch",
       },
     },
   },

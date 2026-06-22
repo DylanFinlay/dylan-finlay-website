@@ -57,7 +57,9 @@
 
 html {
   @apply antialiased;
-  font-feature-settings: "rlig" 1, "calt" 1;
+  font-feature-settings:
+    "rlig" 1,
+    "calt" 1;
 }
 
 body {
@@ -117,8 +119,12 @@ a {
 /* PROSE / BLOG CONTENT                                              */
 /* ================================================================= */
 .prose {
-  max-width: 75ch;
-  @apply mx-auto;
+  max-width: none;
+
+  p {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
 
   a {
     color: var(--color-blue-600);
@@ -415,13 +421,15 @@ a {
   100% {
     transform: scale(1);
     opacity: 0.8;
-    box-shadow: 0 0 10px var(--color-rsf-yellow),
+    box-shadow:
+      0 0 10px var(--color-rsf-yellow),
       0 0 20px var(--color-rsf-orange);
   }
   50% {
     transform: scale(1.1);
     opacity: 1;
-    box-shadow: 0 0 15px var(--color-rsf-yellow),
+    box-shadow:
+      0 0 15px var(--color-rsf-yellow),
       0 0 30px var(--color-rsf-orange);
   }
 }

@@ -6,6 +6,7 @@ interface Post {
   title: string;
   summary?: string;
   date?: string;
+  cover?: string;
 }
 
 export default function BlogPage() {
@@ -14,9 +15,9 @@ export default function BlogPage() {
   return (
     <section className="container-custom">
       <div className="mb-12">
-        <h1 className="mb-3">Blog - Coming Soon</h1>
+        <h1 className="mb-3">Blogs... I guess</h1>
         <p className="text-lg">
-          Thoughts on photography, development, and travel.
+          Thoughts on just about anything that I choose.
         </p>
       </div>
       <div className="grid gap-6">
@@ -27,6 +28,7 @@ export default function BlogPage() {
             summary={post.summary}
             href={`/blog/${post.slug}`}
             date={post.date}
+            cover={post.cover}
           />
         ))}
       </div>

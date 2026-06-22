@@ -3,9 +3,17 @@ import fs from "fs";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
+interface Post {
+  slug: string;
+  title: string;
+  summary?: string;
+  date?: string;
+  cover?: string;
+}
+
 export async function generateStaticParams() {
-  const posts = getAllPosts("blog");
-  return posts.map((post: any) => ({
+  const posts = getAllPosts("blog") as Post[];
+  return posts.map((post) => ({
     slug: post.slug,
   }));
 }
@@ -22,7 +30,7 @@ export default async function BlogPost({
 
   return (
     <article className="container-custom">
-      <header className="mb-12 max-w-3xl">
+      <header className="mb-12">
         <h1 className="mb-4">{data.title}</h1>
         {data.date && (
           <p className="text-base font-medium text-slate-500">{data.date}</p>
