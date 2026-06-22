@@ -67,12 +67,12 @@ export default function Home() {
 
         <Link href="/blog" className="tile-light-blue-clickable group block">
           <h2 className="mb-2 text-2xl group-hover:text-blue-600">Blog</h2>
-          <p>Thoughts on photography, development, and travel.</p>
+          <p>Thoughts on different stuff and other stuff.</p>
         </Link>
 
         <Link href="/extra" className="tile-light-blue-clickable group block">
           <h2 className="mb-2 text-2xl group-hover:text-blue-600">Extra</h2>
-          <p>Interactive projects, notes, and random explorations.</p>
+          <p>Fun widgets, projects, facts, and random explorations.</p>
         </Link>
       </div>
     </section>
