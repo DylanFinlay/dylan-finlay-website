@@ -23,7 +23,7 @@ export interface Album {
   count: number;
 }
 
-const GALLERY_PATH = path.join(process.cwd(), "public", "assets", "gallery");
+const GALLERY_PATH = path.join(process.cwd(), "public", "assets", "photography");
 
 export function humanizeSlug(slug: string) {
   // Remove leading date-like prefix e.g. 2026_02_28_
@@ -61,7 +61,7 @@ function pickCoverUrl(slug: string, entry: any) {
   return variant?.webp || variant?.jpg
     ? variant.webp || variant.jpg
     : entry.filename
-      ? `/assets/gallery/${slug}/derivatives/${path.parse(entry.filename).name}-${preferredWidth}.jpg`
+      ? `/assets/photography/${slug}/derivatives/${path.parse(entry.filename).name}-${preferredWidth}.jpg`
       : undefined;
 }
 
@@ -87,7 +87,7 @@ export async function getAlbums(): Promise<Album[]> {
       coverUrl: coverEntry
         ? pickCoverUrl(slug, coverEntry)
         : cover
-          ? `/assets/gallery/${slug}/${cover}`
+          ? `/assets/photography/${slug}/${cover}`
           : undefined,
       count: manifest?.length ?? rootFiles.length,
     };
@@ -107,7 +107,7 @@ export async function getAlbumPhotos(slug: string): Promise<Photo[]> {
   if (manifest) {
     return manifest.map((item: any) => ({
       filename: item.filename,
-      url: `/assets/gallery/${slug}/${item.filename}`,
+      url: `/assets/photography/${slug}/${item.filename}`,
       variants: item.variants || undefined,
       blurDataURL: item.blurDataURL || undefined,
     }));
@@ -119,7 +119,7 @@ export async function getAlbumPhotos(slug: string): Promise<Photo[]> {
   files.sort();
   return files.map((filename) => ({
     filename,
-    url: `/assets/gallery/${slug}/${filename}`,
+    url: `/assets/photography/${slug}/${filename}`,
   }));
 }
 

@@ -52,8 +52,8 @@ async function processAlbum(dir) {
         console.error("sharp error for", src, e);
       }
       entry.variants[w] = {
-        jpg: `/assets/gallery/${path.basename(abs)}/derivatives/${name}-${w}.jpg`,
-        webp: `/assets/gallery/${path.basename(abs)}/derivatives/${name}-${w}.webp`,
+        jpg: `/assets/photography/${path.basename(abs)}/derivatives/${name}-${w}.jpg`,
+        webp: `/assets/photography/${path.basename(abs)}/derivatives/${name}-${w}.webp`,
       };
     }
     // generate tiny blur placeholder
@@ -86,7 +86,7 @@ if (!albumArg) {
 
 async function run() {
   if (albumArg === "all") {
-    const galleryRoot = path.join(process.cwd(), "public", "assets", "gallery");
+    const galleryRoot = path.join(process.cwd(), "public", "assets", "photography");
     if (!fs.existsSync(galleryRoot)) {
       console.error("gallery root not found:", galleryRoot);
       process.exit(1);

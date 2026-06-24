@@ -2,13 +2,13 @@ Photography gallery — local workflow
 
 Quick summary
 
-- Add albums by creating a new folder under `public/assets/gallery/<your-album-slug>` and copying your image files (jpg, png, webp, avif) into it.
+- Add albums by creating a new folder under `public/assets/photography/<your-album-slug>` and copying your image files (jpg, png, webp, avif) into it.
 - The project generates optimized derivatives (320/768/1280/2048) and a `manifest.json` per album. The site prefers thumbnails for grids and medium images for lightbox.
 
 Commands
 
 - One-off optimize for all albums: `npm run optimize-photos`
-- Optimize a single album: `node scripts/optimize-photos.js public/assets/gallery/<your-album-folder>`
+- Optimize a single album: `node scripts/optimize-photos.js public/assets/photography/<your-album-folder>`
 - Watch and auto-optimize new albums/files: `npm run watch-optimize`
 - Remove stale derivatives after deleting originals: `npm run cleanup-derivatives`
 - Preview the cleanup without deleting anything: `npm run cleanup-derivatives:dry-run`

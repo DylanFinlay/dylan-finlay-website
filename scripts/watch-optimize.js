@@ -4,7 +4,7 @@ const path = require("path");
 const { spawn, exec } = require("child_process");
 const fs = require("fs");
 
-const galleryRoot = path.join(process.cwd(), "public", "assets", "gallery");
+const galleryRoot = path.join(process.cwd(), "public", "assets", "photography");
 
 if (!fs.existsSync(galleryRoot)) {
   console.error("Gallery root not found:", galleryRoot);

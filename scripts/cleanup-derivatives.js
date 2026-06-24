@@ -2,7 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const galleryRoot = path.join(process.cwd(), "public", "assets", "gallery");
+const galleryRoot = path.join(process.cwd(), "public", "assets", "photography");
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
 

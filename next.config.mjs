@@ -9,9 +9,9 @@ const nextConfig = {
   reactCompiler: true,
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   outputFileTracingExcludes: {
-    "/photography": ["./public/assets/gallery/**/*"],
-    "/photography/[slug]": ["./public/assets/gallery/**/*"],
-    "/extra": ["./public/assets/gallery/**/*"],
+    "/photography": ["./public/assets/photography/**/*"],
+    "/photography/[slug]": ["./public/assets/photography/**/*"],
+    "/extra": ["./public/assets/photography/**/*"],
   },
 };
 
